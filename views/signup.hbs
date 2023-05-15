@@ -1,0 +1,35 @@
+<div class="banniere">
+    <h1>Renov'Master</h1>
+</div>
+
+<form action="/signup" method="post">
+    <label>Full name:
+        <input type = "text" name="fullName" required/>
+    </label>
+    <label>Company name:
+        <input type = "text" name="companyName" />
+    </label>
+    <label>Company registration number :
+        <input type = "text" name="companyRegistratioNb" />
+    </label>
+    <label>Company address:
+        <input type = "text" name="companyAddress" />
+    </label>
+    <label>Company post code :
+        <input type = "text" name="companyPostCode" />
+    </label>
+    <label>Phone number :
+        <input type = "number" name ="phoneNb" />
+    </label>
+    <label>Email :
+        <input type = "email" name ="email" required/>
+    </label>
+    <label>Password :
+        <input type = "password" name ="password" required/>
+    </label>
+    <button type="submit">Sign up</button>
+</form>
+
+  <p>{{#if errorMessage}}
+      {{errorMessage}}
+    {{/if}}</p>

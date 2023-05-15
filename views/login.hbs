@@ -1,0 +1,16 @@
+<div class="banniere">
+    <h1>Renov'Master</h1>
+</div>
+
+<form action="/login" method="post">
+  <label>Your e-mail address:
+    <input type="text" name="email" required/>
+  </label>
+  <label>Password :
+    <input type="password" name="password" required />
+  </label>
+  <button type="submit">Login</button>
+  <p>{{#if errorMessage}}
+      {{errorMessage}}
+    {{/if}}</p>
+</form>
