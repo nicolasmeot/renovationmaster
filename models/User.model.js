@@ -1,16 +1,14 @@
 const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema({
-  fullName: {
-    type: String,
-    unique: true
-  },
-  companyRegistratioNb: Number,
+  fullName: String,
+  companyRegistrationNb: Number,
   companyAddress: String,
   companyPostCode: Number,
-  phoneNb:Number,
-  email: String,
-  password: String,
+  phoneNb:String,
+  email: {type: String,
+  unique: true, required:true},
+  password: {type: String, required: true},
   projects: [{type: Schema.Types.ObjectId, ref: "Project"}]
 
 });

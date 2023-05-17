@@ -16,37 +16,46 @@ router.get("/signup", (req, res, next) => {
 });
 
 router.post("/signup", (req, res, next) => {
-  const { username, password } = req.body;
-  if(username ==="" || User.find(username) || password==="" ){
-    res.render("signup", { errorMessage: "Username or password incorrect" })
+  const { fullName, password, companyRegistrationNb, companyAddress, companyPostCode, phoneNb, email} = req.body;
+  if(email ==="" /*|| User.find(email)*/ || password==="" ){
+    res.render("signup", { errorMessage: "Email or password incorrect" })
+    console.log(req.body)
   }
   else{
     bcryptjs
       .genSalt(saltRounds)
       .then((salt) => bcryptjs.hash(password, salt))
       .then((hashedPassword) => {
-        User.create({ username: username, password: hashedPassword });
+        User.create({ 
+          fullName: fullName, 
+          password: hashedPassword,
+          companyRegistrationNb:companyRegistrationNb ,
+          companyAddress: companyAddress,
+          companyPostCode: companyPostCode,
+          phoneNb: phoneNb,
+          email: email,
+        });
       })
       .catch((error) => next(error));
     res.redirect("/profile");
   }
 });
 
-/* Connection Page */
+/* Login Page */
 router.get("/login", (req, res, next) => {
   res.render("login");
 });
 
 router.post("/login", (req, res, next) => {
-  const { username, password } = req.body;
-
-  User.findOne({ username: username })
+  const { email, password } = req.body;
+  console.log(req.body)
+  User.findOne({email: email})
     .then((userFromDb) => {
       if (userFromDb && bcryptjs.compareSync(password, userFromDb.password)) {
         req.session.currentUser = userFromDb;
-        res.redirect("/profile");
+        res.redirect("profile");
       } else {
-        res.render("login", { errorMessage: "Username or password incorrect" });
+        res.render("login", { errorMessage: "Email or password incorrect" });
       }
     })
     .catch((error) => {
@@ -57,7 +66,12 @@ router.post("/login", (req, res, next) => {
 
 router.get("/profile", (req, res, next) => {
   if (req.session.currentUser) {
-    res.render("profile");
+    User
+    .findOne({ email: email })
+    .then(userFromDB => {
+        res.render('profile', {userFromDB})
+    })
+    .catch(err => console.log(`an error happened ${err}`));
   } else {
     res.redirect("/login");
   }
