@@ -68,7 +68,6 @@ router.post("/login", (req, res, next) => {
 
 /* Profile Page */
 router.get("/profile", (req, res, next) => {
-  console.log(req.session.currentUser)
   if (req.session.currentUser) {
     res.render('profile', {userInSession : req.session.currentUser})
     }
