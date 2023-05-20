@@ -4,12 +4,13 @@ const { Schema, model } = require("mongoose");
 const projectSchema = new Schema({
     clientFirstName: String,
     clientLastName: String,
-    clientAdress : String,
+    clientAddress : String,
     clientPhoneNumber : Number,
     clientEmail : String,
-    projectDescription : String,
     firstMeetingDate : Date,
     firstMeetingAddress : String,
+    projectDescription : String,
+    projectDeadline : Date,
     projectMap : String,
     Rooms : [{type: Schema.Types.ObjectId, ref: "Room"}],
 

@@ -49,11 +49,12 @@ router.get("/login", (req, res, next) => {
 router.post("/login", (req, res, next) => {
   const { email, password } = req.body;
   console.log(req.body)
-  User.findOne({email: email})
+  User
+    .findOne({email: email})
     .then((userFromDb) => {
       if (userFromDb && bcryptjs.compareSync(password, userFromDb.password)) {
         req.session.currentUser = userFromDb;
-        res.redirect("profile");
+        res.redirect("/projects");
       } else {
         res.render("login", { errorMessage: "Email or password incorrect" });
       }
@@ -64,31 +65,14 @@ router.post("/login", (req, res, next) => {
     });
 });
 
+
+/* Profile Page */
 router.get("/profile", (req, res, next) => {
+  console.log(req.session.currentUser)
   if (req.session.currentUser) {
-    User
-    .findOne({ email: email })
-    .then(userFromDB => {
-        res.render('profile', {userFromDB})
-    })
-    .catch(err => console.log(`an error happened ${err}`));
-  } else {
-    res.redirect("/login");
-  }
-});
-
-router.get("/main", (req, res, next) => {
-  if (req.session.currentUser) {
-    res.render("main");
-  } else {
-    res.redirect("/login");
-  }
-});
-
-router.get("/private", (req, res, next) => {
-  if (req.session.currentUser) {
-    res.render("private");
-  } else {
+    res.render('profile', {userInSession : req.session.currentUser})
+    }
+  else {
     res.redirect("/login");
   }
 });

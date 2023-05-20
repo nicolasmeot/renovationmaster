@@ -1,0 +1,38 @@
+<div class="banniere">
+    <h1>Renov'Master</h1>
+</div>
+
+<form action="/projects/new" method="post">
+  <label>Client First Name
+    <input type="text" name="clientFirstName" required/>
+  </label>
+  <label>Client Last Name
+    <input type="text" name="clientLastName" required/>
+  </label>
+  <label>Phone number
+    <input type="text" name="clientPhoneNumber" required/>
+  </label>
+  <label>Email address
+    <input type="text" name="clientEmail" required/>
+  </label>
+  <label>Address
+    <input type="text" name="clientAddress" required/>
+  </label>
+  <label>First meeting Date
+    <input type="date" name="firstMeetingDate"/>
+  </label>
+  <label>First meeting address
+    <input type="text" name="firstMeetingAddress"/>
+  </label>
+  <label>Project description
+    <input type="text" name="projectDescription"/>
+  </label>
+  <label>Project deadline
+    <input type="date" name="projectDeadline"/>
+  </label>
+  <button type="submit">Save Project</button>
+  <p>{{#if errorMessage}}
+      {{errorMessage}}
+    {{/if}}</p>
+</form>
+
