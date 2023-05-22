@@ -6,7 +6,12 @@ const Project = require("../models/Project.model.js");
 router.get("/", (req, res, next) => {
   console.log(req.session.currentUser && req.session.currentUser.projects);
   if (req.session.currentUser) {
-    res.render("projects", { userInSession: req.session.currentUser.projects });
+    Project.find({ userId: req.session.currentUser._id })
+      .then((projectsFromDB) => {
+        console.log(projectsFromDB);
+        res.render("projects", { projectsFromDB });
+      })
+      .catch((error) => next(error));
   } else {
     res.redirect("/login");
   }
@@ -42,7 +47,7 @@ router.post("/new", (req, res, next) => {
 });
 
 router.get("/:id", async (req, res, next) => {
-  const projectId = req.params._id;
+  const projectId = req.params.id;
   try {
     projectDetails = await Project.findById(projectId);
     console.log(projectDetails);
