@@ -2,6 +2,7 @@ const router = require("express").Router();
 
 const User = require("../models/User.model.js");
 const Project = require("../models/Project.model.js");
+const Room = require("../models/Room.model.js");
 
 
 router.get("/", (req, res, next) => {
@@ -56,6 +57,18 @@ router.get("/:id", async (req, res, next) => {
     res.render('project-details',projectDetails)
   }
   catch(error) {console.log("an error happened"),error}
+});
+
+router.post("/:projectId/rooms", (req, res, next) => {
+  const roomInfo ={
+    roomName : req.body.roomName,
+    projectId : req.params.projectId,
+  }
+  console.log(roomInfo)
+  Room 
+    .create(roomInfo)
+    .then((newRoom) => res.redirect(`/projects/${newRoom.projectId}/rooms/${newRoom._id}`) )
+    .catch((error) => {console.log("an error happened"),error})
 });
 
 module.exports = router;
