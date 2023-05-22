@@ -1,11 +1,14 @@
 const { Schema, model } = require("mongoose");
 
-const roomSchema = new Schema({
+const taskSchema = new Schema({
+    projectId : String,
+    roomId : String,
     taskName: String,
-    taskDetails: [{
-        procedure: String,
-        position: String,
-        remarks: String,
+    category : String,
+    procedure : String,
+    position : String, 
+    remarks : String,
+    details: [{
         material: String,
         materialCost: Number,
         done: Boolean,
@@ -16,10 +19,11 @@ const roomSchema = new Schema({
         hoursSpent : Number
     }],
     startDate : Date,
+    startAfter : String,
     finishDate:Date,
 
 });
 
-const Room = model("Room", roomSchema);
+const Task = model("Task", taskSchema);
 
-module.exports = Room;
+module.exports = Task;
