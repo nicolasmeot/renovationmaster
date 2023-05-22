@@ -1,0 +1,13 @@
+<h1>Project details page</h1>
+
+<ul> 
+    <h2>{{FirstName}} {{LastName}}</h2>
+    <li>{{Address}}</li>
+    <li>{{PhoneNb}}</li>
+    <li>{{projectDescription}}</li>
+    <li>{{firstMeetingDate}}</li>
+    <li>Rooms</li>
+        {{#each rooms}}
+        <a href="#">{{rooms.name}}</a>
+        {{/each}}
+</ul>
