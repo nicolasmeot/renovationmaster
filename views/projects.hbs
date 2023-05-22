@@ -1,8 +1,8 @@
 <h1>Hello, this is the page with all of your projects</h1>
 
 <ul> 
-    {{#each userInSession}}
-        <li><a href="projects/{{id}}">{{clientFirstName}}</a></li>
+    {{#each projectsFromDB}}
+        <li><a href="/projects/{{id}}">{{FirstName}}</a></li>
     {{/each}}
 </ul>
 
