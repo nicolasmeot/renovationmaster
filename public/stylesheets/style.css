@@ -1,5 +1,6 @@
 body {
   background-color: #fafafe;
+  margin: 0;
 }
 
 a {
@@ -36,7 +37,8 @@ form {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url("/public/images/desktopHomepageBackground.png");
+  background-image: url("../images/desktopHomepageBackground.png");
+  background-size: cover;
   padding: 0;
   background-color: white;
 }
@@ -437,7 +439,7 @@ form {
   width: 24px;
   height: 24px;
 
-  background: #2081e4;
+  color: #2081e4;
 }
 
 #deleteProfileLink {
@@ -448,7 +450,7 @@ form {
   width: 24px;
   height: 24px;
 
-  background: #fc1d20;
+  color: #fc1d20;
 }
 
 /* 

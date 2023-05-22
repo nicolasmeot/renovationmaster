@@ -1,25 +1,6 @@
 <div class="display">
-  <div class="navbar">
-    <!--panneau de navigation. Changer le paramètre visible/hidden via css pour qu'il soit responsive. Quand utilisateur 
-    utilise mobile il sera en haut et il sera hidden (il faut cliquer icone pour afficher), 
-    quand utilise desktop il sera a droite visible.-->
-    <div class="navbarUp">
-      <img
-        class="navicon"
-        src="/public/images/hamburgerMenu.svg"
-        alt="navicon"
-      />
-      <div class="smallLogo">
-        <span class="smallLogo1">Renov'</span>
-        <span class="smallLogo2">Master</span>
-      </div>
-      <!--Icone de profil, il faudra mettre un  pour que ça renvoi à l'image de profile stocké dans la BDD-->
-      <a class="navProfilePic" href="/profile"><img
-          src="/public/images/defautUserProfile.png"
-          alt="defautUserProfile"
-        /></a>
-    </div>
-  </div>
+  {{>nav}}
+  
 
   {{! <div class="navmenu hidden"> }}
 
@@ -27,7 +8,7 @@
 
   <div id="profile">
     <div id="profileMain">
-      <img src="#" alt="profilePic" />
+      <img class="profilePic" src="../images/defautUserProfile.svg" alt="profilePic" />
       <div id="profileContainer">
         <div class="profileItem">
           <h3>Full name:</h3>
@@ -76,8 +57,8 @@
 
         </div>
 
-        <a id="editProfileLink" href="#"><img class="editIcon" src="/public/images/edit.svg" alt="editIcon">Edit Profile</a>
-        <a id="deleteProfileLink" href="#"><img class="deleteIcon" src="/public/images/delete.svg" alt="deleteIcon">Delete Account</a>
+        <a id="editProfileLink" href="#"><img class="editIcon" src="../images/edit.svg" alt="editIcon">Edit Profile</a>
+        <a id="deleteProfileLink" href="#"><img class="deleteIcon" src="../images/delete.svg" alt="deleteIcon">Delete Account</a>
 
       </div>
 
