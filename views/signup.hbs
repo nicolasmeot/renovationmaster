@@ -1,35 +1,53 @@
-<div class="banniere">
-    <h1>Renov'Master</h1>
+<div class="loginSignup">
+  <div class="loginSignupLeft">
+    <div class="loginSignupLeftContainer">
+      <div class="mediumLogo">
+        <span class="mediumLogo1">Renov'</span>
+        <span class="mediumLogo2">Master</span>
+      </div>
+      <div class="slogan">
+        <span id="signupSlogan1" class="slogan1">Hi! Wanna track your renovation
+          work easily?</span>
+        <span id="signupSlogan2" class="slogan2">Let’s create your account and
+          try</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="loginSignupRight">
+    <form class="longForm" action="/signup" method="post">
+      <label class="formLabel">Full name:
+        <input class="formInput" type="text" name="firstName" />
+      </label>
+      <label class="formLabel">Company name:
+        <input class="formInput" type="text" name="companyName" />
+      </label>
+      <label class="formLabel">Company registration number :
+        <input class="formInput" type="text" name="companyRegistrationNb" />
+      </label>
+      <label class="formLabel">Company address:
+        <input class="formInput" type="text" name="companyAddress" />
+      </label>
+      <label class="formLabel">Company post code :
+        <input class="formInput" type="text" name="companyPostCode" />
+      </label>
+      <label class="formLabel">Email* :
+        <input class="formInput" type="email" name="email" required />
+      </label>
+      <label class="formLabel">Phone number :
+        <input class="formInput" type="number" name="phoneNb" />
+      </label>
+      <label class="formLabel">Password* :
+        <input class="formInput" type="password" name="password" required />
+      </label>
+
+      <button class="formBtn" type="submit">Sign up</button>
+      <p>{{#if errorMessage}}
+          {{errorMessage}}
+        {{/if}}</p>
+    </form>
+
+  </div>
+
 </div>
-
-<form action="/signup" method="post">
-    <label>Full name:
-        <input type = "text" name="fullName"/>
-    </label>
-    <label>Company name:
-        <input type = "text" name="companyName" />
-    </label>
-    <label>Company registration number :
-        <input type = "text" name="companyRegistrationNb" />
-    </label>
-    <label>Company address:
-        <input type = "text" name="companyAddress" />
-    </label>
-    <label>Company post code :
-        <input type = "text" name="companyPostCode" />
-    </label>
-    <label>Phone number :
-        <input type = "number" name ="phoneNb" />
-    </label>
-    <label>Email :
-        <input type = "email" name ="email" required/>
-    </label>
-    <label>Password :
-        <input type = "password" name ="password" required/>
-    </label>
-    <button type="submit">Sign up</button>
-</form>
-
-  <p>{{#if errorMessage}}
-      {{errorMessage}}
-    {{/if}}</p>

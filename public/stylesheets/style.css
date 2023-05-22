@@ -1,13 +1,482 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #fafafe;
 }
 
 a {
-  color: #00B7FF;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1em;
+  text-decoration: none;
+
+  color: #2081e4;
 }
 
 form {
-  display : flex;
+  display: flex;
   flex-direction: column;
+}
+
+/* 
+██╗███╗   ██╗██████╗ ███████╗██╗  ██╗
+██║████╗  ██║██╔══██╗██╔════╝╚██╗██╔╝
+██║██╔██╗ ██║██║  ██║█████╗   ╚███╔╝ 
+██║██║╚██╗██║██║  ██║██╔══╝   ██╔██╗ 
+██║██║ ╚████║██████╔╝███████╗██╔╝ ██╗
+╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝ */
+
+#index {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+#indexLeft {
+  width: 60vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url("/public/images/desktopHomepageBackground.png");
+  padding: 0;
+  background-color: white;
+}
+
+#indexLeftContainer {
+  margin: auto;
+  flex-direction: column;
+}
+
+.largeLogo {
+  display: flex;
+  padding: 0;
+}
+
+.largeLogo1 {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4em;
+  padding: 0;
+
+  color: #17b35f;
+}
+
+.largeLogo2 {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4em;
+  padding: 0;
+
+  color: #7a24f7;
+}
+
+#indexSlogan {
+  font-family: "Lato";
+  font-style: normal;
+  font-size: 1.7em;
+  font-weight: 300;
+
+  color: #2081e4;
+}
+
+#indexRight {
+  width: 40vw;
+  display: flex;
+  text-align: center;
+  padding: 0;
+  background-color: white;
+}
+
+#indexRightContainer {
+  height: 18vh;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  position: absolute;
+  top: 41vh;
+  right: calc(20vw - 104px);
+}
+
+#indexRight p {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.5em;
+  line-height: 1em;
+
+  color: #5f5e63;
+
+  position: absolute;
+  top: 30vh;
+  right: calc(20vw - 104px);
+}
+
+.indexBtn {
+  width: 208px;
+  height: 43px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+
+  box-shadow: 0px 2px 4px 4px #f2f2ff;
+  border-radius: 45.5px;
+
+  text-decoration: none;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25em;
+}
+
+#indexLogin {
+  background-color: #7a24f7;
+  color: #ffffff;
+}
+
+#indexSignup {
+  background-color: #ffffff;
+  border: 1px solid #7a24f7;
+  color: #7a24f7;
+}
+
+/* 
+███████╗██╗ ██████╗ ███╗   ██╗██╗   ██╗██████╗ 
+██╔════╝██║██╔════╝ ████╗  ██║██║   ██║██╔══██╗
+███████╗██║██║  ███╗██╔██╗ ██║██║   ██║██████╔╝
+╚════██║██║██║   ██║██║╚██╗██║██║   ██║██╔═══╝ 
+███████║██║╚██████╔╝██║ ╚████║╚██████╔╝██║     
+╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝      */
+
+.loginSignup {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.loginSignupLeft {
+  width: 33vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginSignupLeftContainer {
+  position: relative;
+  width: 25vw;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.mediumLogo {
+  position: absolute;
+  top: 0;
+  display: flex;
+  padding: 0;
+}
+
+.mediumLogo1 {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.2em;
+  padding: 0;
+
+  color: #17b35f;
+}
+
+.mediumLogo2 {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.2em;
+  padding: 0;
+
+  color: #7a24f7;
+}
+
+.slogan {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.slogan1 {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2em;
+  display: flex;
+  margin-bottom: 3vh;
+
+  color: #2b2a30;
+}
+
+.slogan2 {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5em;
+
+  color: #82818f;
+}
+
+.loginSignupRight {
+  width: 67vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.longForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(5, auto);
+  width: 59vw;
+  height: 70vh;
+  padding: 20px;
+
+  justify-items: stretch;
+}
+
+.formLabel {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
+  display: block;
+
+  color: #2b2a30;
+}
+
+.formInput {
+  width: 25.5vw;
+  height: 46px;
+
+  background: #ffffff;
+  border: 1px solid #7a00fb;
+  border-radius: 2px;
+  display: block;
+}
+
+.formBtn {
+  width: 26vw;
+  height: 46px;
+  color: white;
+
+  background: linear-gradient(
+    96.68deg,
+    #c184ff -21.43%,
+    #6a67ff 12.14%,
+    #6800d6 113.11%
+  );
+  border-radius: 23px;
+  border-style: none;
+
+  margin-top: 2.2vh;
+}
+
+/* 
+██╗      ██████╗  ██████╗ ██╗███╗   ██╗
+██║     ██╔═══██╗██╔════╝ ██║████╗  ██║
+██║     ██║   ██║██║  ███╗██║██╔██╗ ██║
+██║     ██║   ██║██║   ██║██║██║╚██╗██║
+███████╗╚██████╔╝╚██████╔╝██║██║ ╚████║
+╚══════╝ ╚═════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝
+                                        */
+
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  width: 59vw;
+  height: 70vh;
+  padding: 20px;
+
+  align-items: center;
+  justify-content: center;
+  gap: 5vh;
+}
+
+/* 
+███╗   ██╗ █████╗ ██╗   ██╗██████╗  █████╗ ██████╗ 
+████╗  ██║██╔══██╗██║   ██║██╔══██╗██╔══██╗██╔══██╗
+██╔██╗ ██║███████║██║   ██║██████╔╝███████║██████╔╝
+██║╚██╗██║██╔══██║╚██╗ ██╔╝██╔══██╗██╔══██║██╔══██╗
+██║ ╚████║██║  ██║ ╚████╔╝ ██████╔╝██║  ██║██║  ██║
+╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ */
+
+.navbar {
+  width: 25vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbarUp {
+  width: 25vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navicon {
+  width: 47px;
+  height: 43.3px;
+  left: 18px;
+  top: 61.84px;
+  border: 2.9375px solid #2b2a30;
+  visibility: hidden;
+}
+
+.smallLogo {
+  display: flex;
+  padding: 0;
+}
+
+.smallLogo1 {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2em;
+  padding: 0;
+
+  color: #17b35f;
+}
+
+.smallLogo2 {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2em;
+  padding: 0;
+
+  color: #7a24f7;
+}
+
+.navProfilePic {
+  width: 100px;
+  height: 100px;
+}
+
+.display {
+  display: flex;
+}
+
+/* 
+██████╗ ██████╗  ██████╗ ███████╗██╗██╗     ███████╗
+██╔══██╗██╔══██╗██╔═══██╗██╔════╝██║██║     ██╔════╝
+██████╔╝██████╔╝██║   ██║█████╗  ██║██║     █████╗  
+██╔═══╝ ██╔══██╗██║   ██║██╔══╝  ██║██║     ██╔══╝  
+██║     ██║  ██║╚██████╔╝██║     ██║███████╗███████╗
+╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚══════╝ */
+
+#profile {
+  width: 75vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#profileMain {
+  width: 59vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#profileContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(5, auto);
+  width: 59vw;
+  height: 70vh;
+  padding: 20px;
+
+  justify-items: stretch;
+}
+
+.profileItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileItem h3 {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2em;
+
+  color: #2b2a30;
+}
+
+.profileItem p {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1em;
+
+  color: #82808f;
+}
+
+.editIcon {
+  width: 24px;
+  height: 24px;
+
+  background: #2081e4;
+}
+
+#deleteProfileLink {
+  color: #fc1d20;
+}
+
+.deleteIcon {
+  width: 24px;
+  height: 24px;
+
+  background: #fc1d20;
+}
+
+/* 
+██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗███████╗
+██╔══██╗██╔══██╗██╔═══██╗     ██║██╔════╝██╔════╝╚══██╔══╝██╔════╝
+██████╔╝██████╔╝██║   ██║     ██║█████╗  ██║        ██║   ███████╗
+██╔═══╝ ██╔══██╗██║   ██║██   ██║██╔══╝  ██║        ██║   ╚════██║
+██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║   ███████║
+╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝   ╚══════╝ */
+
+/* 
+███╗   ██╗███████╗██╗    ██╗    ██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗
+████╗  ██║██╔════╝██║    ██║    ██╔══██╗██╔══██╗██╔═══██╗     ██║██╔════╝██╔════╝╚══██╔══╝
+██╔██╗ ██║█████╗  ██║ █╗ ██║    ██████╔╝██████╔╝██║   ██║     ██║█████╗  ██║        ██║   
+██║╚██╗██║██╔══╝  ██║███╗██║    ██╔═══╝ ██╔══██╗██║   ██║██   ██║██╔══╝  ██║        ██║   
+██║ ╚████║███████╗╚███╔███╔╝    ██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║   
+╚═╝  ╚═══╝╚══════╝ ╚══╝╚══╝     ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝    */
+
+#newProjectMain {
+  width: 75vw;
+  height: 100vh;
+  display: flex;
+}
+
+#newProjectContainer {
+  width: 67vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }

@@ -1,35 +1,88 @@
-<div class="navbar"> 
-    <!--Icone en haut à gauche pour barre de navigation-->
-    <img src="#" alt="navicon"/> 
-    <h2>Renov'Master</h2>
-    <!--Icone de profil, il faudra mettre un  pour que ça renvoi à l'image de profile stocké dans la BDD-->
-    <a href="/profile"><img src="#"/></a>
+<div class="display">
+  <div class="navbar">
+    <!--panneau de navigation. Changer le paramètre visible/hidden via css pour qu'il soit responsive. Quand utilisateur 
+    utilise mobile il sera en haut et il sera hidden (il faut cliquer icone pour afficher), 
+    quand utilise desktop il sera a droite visible.-->
+    <div class="navbarUp">
+      <img
+        class="navicon"
+        src="/public/images/hamburgerMenu.svg"
+        alt="navicon"
+      />
+      <div class="smallLogo">
+        <span class="smallLogo1">Renov'</span>
+        <span class="smallLogo2">Master</span>
+      </div>
+      <!--Icone de profil, il faudra mettre un  pour que ça renvoi à l'image de profile stocké dans la BDD-->
+      <a class="navProfilePic" href="/profile"><img
+          src="/public/images/defautUserProfile.png"
+          alt="defautUserProfile"
+        /></a>
+    </div>
+  </div>
+
+  {{! <div class="navmenu hidden"> }}
+
+  {{! </div> }}
+
+  <div id="profile">
+    <div id="profileMain">
+      <img src="#" alt="profilePic" />
+      <div id="profileContainer">
+        <div class="profileItem">
+          <h3>Full name:</h3>
+          <p class="vignette">{{fullName}}</p>
+        </div>
+
+        <div class="profileItem">
+          <h3>Company name:</h3>
+          <p class="vignette">{{companyName}}</p>
+
+        </div>
+
+        <div class="profileItem">
+          <h3>Company registration number : </h3>
+          <p class="vignette">{{companyRegistratioNb}}</p>
+
+        </div>
+
+        <div class="profileItem">
+          <h3>Company address: </h3>
+          <p class="vignette">{{companyAddress}}</p>
+
+        </div>
+
+        <div class="profileItem">
+          <h3>Company post code : </h3>
+          <p class="vignette">{{companyPostCode}}</p>
+
+        </div>
+
+        <div class="profileItem">
+          <h3>Phone number :</h3>
+          <p class="vignette">{{phone}}</p>
+
+        </div>
+
+        <div class="profileItem">
+          <h3>Email :</h3>
+          <p class="vignette">{{email}}</p>
+
+        </div>
+
+        <div class="profileItem">
+          <h3>Password :</h3>
+          <p class="vignette">*********</p>
+
+        </div>
+
+        <a id="editProfileLink" href="#"><img class="editIcon" src="/public/images/edit.svg" alt="editIcon">Edit Profile</a>
+        <a id="deleteProfileLink" href="#"><img class="deleteIcon" src="/public/images/delete.svg" alt="deleteIcon">Delete Account</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </div>
-
-<!--panneau de navigation. Changer le paramètre visible/hidden via le JS-->
-<div class="navmenu hidden">
-    
-</div>
-
-<img src="#" alt="profilePic"/>
-
-<h3>Full name:</h3>
-    <p class ="vignette">{{fullName}}</p>
-<h3>Company name:</h3>
-    <p class ="vignette">{{companyName}}</p>  
-<h3>Company registration number : </h3>
-    <p class ="vignette">{{companyRegistratioNb}}</p>  
-<h3>Company address:    </h3>
-    <p class ="vignette">{{companyAddress}}</p>  
-<h3>Company post code : </h3>
-    <p class ="vignette">{{companyPostCode}}</p>  
-<h3>Phone number :</h3>
-    <p class ="vignette">{{phone}}</p>  
-<h3>Email :</h3>
-    <p class ="vignette">{{email}}</p>  
-<h3>Password :</h3>
-    <p class ="vignette">*********</p>  
-
-
-<a href="#">Edit Profile</a>
-<a href="#">Delete Account</a>
