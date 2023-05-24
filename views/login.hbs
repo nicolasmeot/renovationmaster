@@ -1,6 +1,6 @@
 <div class="loginSignup">
-  <div class="loginSignupLeft">
-    <div class="loginSignupLeftContainer">
+  <div class="loginSignupHeading">
+    <div class="loginSignupHeadingContainer">
       <div class="mediumLogo">
         <span class="mediumLogo1">Renov'</span>
         <span class="mediumLogo2">Master</span>
@@ -13,7 +13,7 @@
     </div>
   </div>
 
-  <div class="loginSignupRight">
+  <div class="loginSignupForm">
     <form id="loginForm" action="/login" method="post">
       <label class="formLabel">Your e-mail address:
         <input class="formInput" type="text" name="email" required/>
@@ -21,7 +21,7 @@
        <label class="formLabel">Password :
         <input class="formInput" type="password" name="password" required />
       </label>
-      <button class="formBtn" type="submit">Login</button>
+      <button id="loginBtn" class="roundGradientBtn" type="submit">Login</button>
       <p>{{#if errorMessage}}
           {{errorMessage}}
         {{/if}}</p>

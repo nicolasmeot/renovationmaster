@@ -30,20 +30,21 @@ form {
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
 }
 
-#indexLeft {
-  width: 60vw;
-  height: 100vh;
+#indexHeading {
+  width: 100vw;
+  height: 50vh;
   display: flex;
   flex-direction: column;
-  background-image: url("../images/desktopHomepageBackground.png");
+  background-image: url("../images/mobileHomepageBackground.png");
   background-size: cover;
   padding: 0;
   background-color: white;
 }
 
-#indexLeftContainer {
+#indexHeadingContainer {
   margin: auto;
   flex-direction: column;
 }
@@ -57,7 +58,7 @@ form {
   font-family: "DM Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 4em;
+  font-size: 2em;
   padding: 0;
 
   color: #17b35f;
@@ -67,7 +68,7 @@ form {
   font-family: "DM Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 4em;
+  font-size: 2em;
   padding: 0;
 
   color: #7a24f7;
@@ -76,34 +77,34 @@ form {
 #indexSlogan {
   font-family: "Lato";
   font-style: normal;
-  font-size: 1.7em;
+  font-size: 1em;
   font-weight: 300;
 
   color: #2081e4;
 }
 
-#indexRight {
-  width: 40vw;
+#indexLoginSignup {
+  width: 100vw;
+  height: 50vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+
   text-align: center;
   padding: 0;
   background-color: white;
 }
 
-#indexRightContainer {
-  height: 18vh;
-  margin: auto;
+#indexLoginSignupContainer {
+  height: 15vh;
+
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-
-  position: absolute;
-  top: 41vh;
-  right: calc(20vw - 104px);
+  justify-content: space-around;
 }
 
-#indexRight p {
+#indexLoginSignup p {
   font-family: "Lato";
   font-style: normal;
   font-weight: 300;
@@ -111,43 +112,58 @@ form {
   line-height: 1em;
 
   color: #5f5e63;
-
-  position: absolute;
-  top: 30vh;
-  right: calc(20vw - 104px);
 }
 
-.indexBtn {
-  width: 208px;
-  height: 43px;
-
+.roundWhiteBtn {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  gap: 10px;
+  padding: 0.5em 3em;
 
   box-shadow: 0px 2px 4px 4px #f2f2ff;
   border-radius: 45.5px;
+  border-style: none;
 
   text-decoration: none;
 
   font-family: "Lato";
   font-style: normal;
   font-weight: 700;
-  font-size: 1.25em;
-}
+  font-size: 1em;
 
-#indexLogin {
-  background-color: #7a24f7;
-  color: #ffffff;
-}
-
-#indexSignup {
   background-color: #ffffff;
   border: 1px solid #7a24f7;
   color: #7a24f7;
+}
+
+.roundGradientBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 3em;
+
+  box-shadow: 0px 2px 4px 4px #f2f2ff;
+  border-radius: 45.5px;
+  border-style: none;
+
+  text-decoration: none;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1em;
+
+  background: linear-gradient(
+    96.68deg,
+    #c184ff -21.43%,
+    #6a67ff 12.14%,
+    #6800d6 113.11%
+  );
+  box-shadow: 0px 2px 4px 4px #f2f2ff;
+  border-radius: 45.5px;
+  color: #ffffff;
 }
 
 /* 
@@ -162,36 +178,44 @@ form {
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
 }
 
-.loginSignupLeft {
-  width: 33vw;
-  height: 100vh;
+.loginSignupHeading {
+  width: 100vw;
+  height: 22vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.loginSignupLeftContainer {
-  position: relative;
-  width: 25vw;
-  height: 70vh;
+.loginSignupHeadingContainer {
+  width: 70vw;
+  height: 22vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .mediumLogo {
-  position: absolute;
-  top: 0;
+  width: 100vw;
+  height: 10vh;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #dcdbe0;
+
   padding: 0;
+  background-color: white;
 }
 
 .mediumLogo1 {
   font-family: "DM Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 2.2em;
+  font-size: 1.5em;
   padding: 0;
 
   color: #17b35f;
@@ -201,13 +225,14 @@ form {
   font-family: "DM Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 2.2em;
+  font-size: 1.5em;
   padding: 0;
 
   color: #7a24f7;
 }
 
 .slogan {
+  width: 70vw;
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -217,9 +242,8 @@ form {
   font-family: "Lato";
   font-style: normal;
   font-weight: 700;
-  font-size: 2em;
+  font-size: 1.2em;
   display: flex;
-  margin-bottom: 3vh;
 
   color: #2b2a30;
 }
@@ -228,28 +252,26 @@ form {
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
-  font-size: 1.5em;
+  font-size: 1.1em;
+  padding-top: 0.5vh;
 
   color: #82818f;
 }
 
-.loginSignupRight {
-  width: 67vw;
-  height: 100vh;
+.loginSignupForm {
+  width: 100vw;
+
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: center;
+  padding-top: 3vh;
 }
 
-.longForm {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(5, auto);
-  width: 59vw;
-  height: 70vh;
-  padding: 20px;
-
-  justify-items: stretch;
+#loginForm {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .formLabel {
@@ -258,35 +280,24 @@ form {
   font-weight: 400;
   font-size: 1em;
   display: block;
+  padding-bottom: 15px;
 
   color: #2b2a30;
 }
 
 .formInput {
-  width: 25.5vw;
-  height: 46px;
-
+  width: 70vw;
+  height: 2em;
   background: #ffffff;
   border: 1px solid #7a00fb;
   border-radius: 2px;
   display: block;
 }
 
-.formBtn {
-  width: 26vw;
-  height: 46px;
-  color: white;
-
-  background: linear-gradient(
-    96.68deg,
-    #c184ff -21.43%,
-    #6a67ff 12.14%,
-    #6800d6 113.11%
-  );
-  border-radius: 23px;
-  border-style: none;
-
-  margin-top: 2.2vh;
+#signupBtn {
+  margin-top: 2.5vh;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* 
@@ -298,16 +309,10 @@ form {
 ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝
                                         */
 
-#loginForm {
-  display: flex;
-  flex-direction: column;
-  width: 59vw;
-  height: 70vh;
-  padding: 20px;
-
-  align-items: center;
-  justify-content: center;
-  gap: 5vh;
+#loginBtn {
+  margin-top: 2.5vh;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* 
@@ -319,28 +324,27 @@ form {
 ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ */
 
 .navbar {
-  width: 25vw;
-  height: 100vh;
+  width: 100vw;
+  height: 5vh;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
 }
 
 .navbarUp {
-  width: 25vw;
-  height: 30vh;
+  width: 100vw;
+  height: 5vh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #dcdbe0;
 }
 
 .navicon {
   width: 47px;
-  height: 43.3px;
-  left: 18px;
-  top: 61.84px;
-  border: 2.9375px solid #2b2a30;
-  visibility: hidden;
+  height: 43px;
+
+  padding: calc((5vh-43px) / 2);
 }
 
 .smallLogo {
@@ -352,7 +356,7 @@ form {
   font-family: "DM Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 2em;
+  font-size: 1em;
   padding: 0;
 
   color: #17b35f;
@@ -362,19 +366,22 @@ form {
   font-family: "DM Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 2em;
+  font-size: 1em;
   padding: 0;
 
   color: #7a24f7;
 }
 
 .navProfilePic {
-  width: 100px;
-  height: 100px;
+  height: 36px;
 }
 
 .display {
+  width: 100vw;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* 
@@ -386,30 +393,30 @@ form {
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚══════╝ */
 
 #profile {
-  width: 75vw;
+  width: 80vw;
   height: 100vh;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  padding-top: 6vh;
 }
 
 #profileMain {
-  width: 59vw;
+  width: 80vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
   align-items: center;
 }
 
 #profileContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(5, auto);
-  width: 59vw;
-  height: 70vh;
-  padding: 20px;
+  width: 80vw;
 
   justify-items: stretch;
+}
+
+.profilePic {
+  width: 50px;
 }
 
 .profileItem {
@@ -421,7 +428,8 @@ form {
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
-  font-size: 1.2em;
+  font-size: 1em;
+  margin-bottom: 1vh;
 
   color: #2b2a30;
 }
@@ -430,9 +438,21 @@ form {
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 700;
-  font-size: 1em;
+  font-size: 0.8em;
 
   color: #82808f;
+}
+
+#editDeleteProfile {
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4vh;
+}
+
+.editDeleteBtn {
+  display: flex;
+  align-items: center;
 }
 
 .editIcon {
