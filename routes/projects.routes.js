@@ -49,14 +49,15 @@ router.post("/new", (req, res, next) => {
 
 router.get("/:id", async (req, res, next) => {
   const projectId = req.params.id;
+  console.log(projectId)
   try {
     projectDetails = await Project.findById(projectId);
+    roomDetails = await Room.find({projectId : projectId})
     console.log(projectDetails);
-    res.render("project-details", projectDetails);
-  } catch (error) {
-    console.log("an error happened"), error;
-  }
-});
+    res.render("project-details", {projectDetails, roomDetails});
+  } 
+  catch(error) {console.log("an error happened", error)};
+})
 
 router.post("/:projectId/rooms", (req, res, next) => {
   const roomInfo ={
@@ -67,7 +68,7 @@ router.post("/:projectId/rooms", (req, res, next) => {
   Room 
     .create(roomInfo)
     .then((newRoom) => res.redirect(`/projects/${newRoom.projectId}/rooms/${newRoom._id}`) )
-    .catch((error) => {console.log("an error happened"),error})
+    .catch((error) => {console.log("an error happened",error)})
 });
 
 module.exports = router;
