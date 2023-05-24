@@ -3,11 +3,11 @@ const { Schema, model } = require("mongoose");
 // TODO: Please make sure you edit the user model to whatever makes sense in this case
 const projectSchema = new Schema({
     userId: String,
-    FirstName: String,
-    LastName: String,
-    Address : String,
-    PhoneNb : Number,
-    Email : String,
+    firstName: String,
+    lastName: String,
+    address : String,
+    phoneNb : Number,
+    email : String,
     firstMeetingDate : Date,
     firstMeetingAddress : String,
     projectDescription : String,

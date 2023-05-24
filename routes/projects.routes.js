@@ -26,11 +26,11 @@ router.get("/new", (req, res, next) => {
 router.post("/new", (req, res, next) => {
   const projectInfo = {
     userId: req.session.currentUser._id,
-    FirstName: req.body.FirstName,
-    LastName: req.body.LastName,
-    Address: req.body.Address,
-    PhoneNb: req.body.PhoneNb,
-    Email: req.body.Email,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    address: req.body.address,
+    phoneNb: req.body.phoneNb,
+    email: req.body.email,
     firstMeetingDate: req.body.firstMeetingDate,
     firstMeetingAddress: req.body.firstMeetingAddress,
     projectDescription: req.body.projectDescription,
@@ -49,14 +49,15 @@ router.post("/new", (req, res, next) => {
 
 router.get("/:id", async (req, res, next) => {
   const projectId = req.params.id;
+  console.log(projectId)
   try {
     projectDetails = await Project.findById(projectId);
+    roomDetails = await Room.find({projectId : projectId})
     console.log(projectDetails);
-    res.render("project-details", projectDetails);
-  } catch (error) {
-    console.log("an error happened"), error;
-  }
-});
+    res.render("project-details", {projectDetails, roomDetails});
+  } 
+  catch(error) {console.log("an error happened", error)};
+})
 
 router.post("/:projectId/rooms", (req, res, next) => {
   const roomInfo ={
@@ -67,7 +68,7 @@ router.post("/:projectId/rooms", (req, res, next) => {
   Room 
     .create(roomInfo)
     .then((newRoom) => res.redirect(`/projects/${newRoom.projectId}/rooms/${newRoom._id}`) )
-    .catch((error) => {console.log("an error happened"),error})
+    .catch((error) => {console.log("an error happened",error)})
 });
 
 module.exports = router;

@@ -1,16 +1,16 @@
 z<h1>Project details page</h1>
 
 <ul> 
-    <h2>{{FirstName}} {{LastName}}</h2>
-    <li>{{Address}}</li>
-    <li>{{PhoneNb}}</li>
-    <li>{{projectDescription}}</li>
-    <li>{{firstMeetingDate}}</li>
+    <h2>{{projectDetails.firstName}} {{projectDetails.lastName}}</h2>
+    <li>{{projectDetails.address}}</li>
+    <li>{{projectDetails.phoneNb}}</li>
+    <li>{{projectDetails.projectDescription}}</li>
+    <li>{{projectDetails.firstMeetingDate}}</li>
     <li>Rooms</li>
-        {{#each rooms}}
-        <a href="#">{{rooms.name}}</a>
+        {{#each roomDetails}}
+        <a href="/projects/{{projectId}}/rooms/{{_id}}">{{roomName}}</a>
         {{/each}}
-    <li>
+    <li> 
     <form action="/projects/{{_id}}/rooms" method="post"> 
       <label class="formLabel">
         <input class="formInput" type="text" name="roomName" />
