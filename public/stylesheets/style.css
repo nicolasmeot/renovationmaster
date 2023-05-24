@@ -183,7 +183,7 @@ form {
 
 .loginSignupHeading {
   width: 100vw;
-  height: 22vh;
+  height: 21vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -192,7 +192,7 @@ form {
 
 .loginSignupHeadingContainer {
   width: 70vw;
-  height: 22vh;
+  height: 21vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -258,20 +258,19 @@ form {
   color: #82818f;
 }
 
-.loginSignupForm {
+.longForm {
   width: 100vw;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 3vh;
 }
 
-#loginForm {
-  width: 70vw;
+.loginSignupFormContainer {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  margin-top: 2vh;
 }
 
 .formLabel {
@@ -280,7 +279,7 @@ form {
   font-weight: 400;
   font-size: 1em;
   display: block;
-  padding-bottom: 15px;
+  margin-bottom: 18px;
 
   color: #2b2a30;
 }
@@ -292,10 +291,11 @@ form {
   border: 1px solid #7a00fb;
   border-radius: 2px;
   display: block;
+  padding-top: 5px;
 }
 
 #signupBtn {
-  margin-top: 2.5vh;
+  margin-top: 0.8vh;
   margin-left: auto;
   margin-right: auto;
 }
@@ -308,6 +308,12 @@ form {
 ███████╗╚██████╔╝╚██████╔╝██║██║ ╚████║
 ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝
                                         */
+#loginForm {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
 #loginBtn {
   margin-top: 2.5vh;
@@ -325,7 +331,7 @@ form {
 
 .navbar {
   width: 100vw;
-  height: 5vh;
+  height: 7.2vh;
   display: flex;
   justify-content: space-between;
 }
@@ -493,12 +499,11 @@ form {
   width: 75vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-#newProjectContainer {
-  width: 67vw;
-  height: 100vh;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+#newProjectBtn {
+  margin-top: 2vh;
 }
