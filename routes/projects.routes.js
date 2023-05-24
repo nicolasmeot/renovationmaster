@@ -26,11 +26,11 @@ router.get("/new", (req, res, next) => {
 router.post("/new", (req, res, next) => {
   const projectInfo = {
     userId: req.session.currentUser._id,
-    FirstName: req.body.FirstName,
-    LastName: req.body.LastName,
-    Address: req.body.Address,
-    PhoneNb: req.body.PhoneNb,
-    Email: req.body.Email,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    address: req.body.address,
+    phoneNb: req.body.phoneNb,
+    email: req.body.email,
     firstMeetingDate: req.body.firstMeetingDate,
     firstMeetingAddress: req.body.firstMeetingAddress,
     projectDescription: req.body.projectDescription,
