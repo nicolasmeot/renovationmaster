@@ -19,3 +19,12 @@ function deadlineDate() {
   let date = document.getElementById("projectDeadlineInput").value;
   document.getElementById("projectDeadlineDate").innerHTML = date;
 }
+
+const uploadPlanForm = document.querySelector(".floorPlanForm");
+const uploadPlanWindow = document.querySelector(".floorPlanWindow");
+
+if (uploadPlanWindow) {
+  uploadPlanWindow.addEventListener("change", () => {
+    uploadPlanForm.submit();
+  });
+}

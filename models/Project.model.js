@@ -12,7 +12,7 @@ const projectSchema = new Schema({
     firstMeetingAddress : String,
     projectDescription : String,
     projectDeadline : Date,
-    projectMap : String,
+    floorPlan : String,
     Rooms : [{type: Schema.Types.ObjectId, ref: "Room"}],
 
 });

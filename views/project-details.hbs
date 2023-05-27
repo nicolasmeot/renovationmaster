@@ -105,9 +105,34 @@
   <div id="floorplan" class="section">
     <h2 class="sectionHead">Floor plan</h2>
     <div id="floorplanPhotos" class="photoSectionContainer">
-      <img class="addPhotoIcon" src="../images/addPhoto.svg" alt="addPhoto">
+        <!-- Mise en page si une image a déjà été uploadée --> 
+        {{#if projectDetails.floorPlan}}            
+            <img src="{{projectDetails.floorPlan}}" alt="FloorPlan"/>
+        {{else}}
+        <form action="/projects/{{projectDetails._id}}/photos" method="post" enctype="multipart/form-data" class="floorPlanForm"> 
+            <label> <img class="addPhotoIcon" src="../images/addPhoto.svg" alt="addPhoto">
+                <input type="file" name="floorPlan" class="floorPlanWindow"/>
+            </label>
+            
+            <p>{{#if errorMessage}}
+                {{errorMessage}}
+                {{/if}}</p>
+        </form>
+        {{/if}} 
     </div>
   </div>
+
+<!-- Link to modify the picture once a picture has been uploaded --> 
+<form action="/projects/{{projectDetails._id}}/photos/update" method="post" enctype="multipart/form-data" class="floorPlanForm"> 
+    <label>
+        <div id="editDeleteProject">
+            <div id="editProject" class="editDeleteBtn">
+                <img class="editIcon" src="../images/edit.svg" alt="editIcon">
+                <input type="file" name="floorPlan" class="floorPlanWindow" style : "none"/>  
+            </div>
+        </div>
+    </label>
+</form>
 
 
   

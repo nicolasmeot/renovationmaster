@@ -811,6 +811,12 @@ form {
   border-radius: 2px;
 }
 
+.photoSectionContainer img {
+  width : 100%
+}
+
+
+
 .addPhotoIcon {
   width: 75px;
   height: 75px;
