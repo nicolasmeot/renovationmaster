@@ -3,20 +3,7 @@
 <div id="roomDetails">
     <div class="projectRoomName">{{roomName}}</div>
     
-        <h2 id="roomCartDescription" class="sectionHead">Description</h2>
-        <div id="editDescription">
-          <div id="editDescriptionBtn" class="editDeleteBtn">
-            <img class="editIcon" src="../images/edit.svg" alt="editIcon">
-            <a class="editLink" href="#">Edit</a>
-          </div>
-        
-        <div id="roomCartDescriptionDetails" class="sectionContainer">
-
-            <div>
-                {{roomDescription}}
-
-            </div>
-        </div>
+    {{>roomdescription}}
     </div>
     
 
@@ -68,6 +55,7 @@
     <div class="section">
         <h2 class="sectionHead">Task details</h2>
         <div class="sectionContainer">
+            
             <form action="/projects/{{projectId}}/rooms/{{_id}}/tasks" method="post"> 
                 <label class="formLabel">
                 <input class="formInput" type="text" name="newTask" />
@@ -76,6 +64,7 @@
                 <p>{{#if errorMessage}}
                     {{errorMessage}}
                 {{/if}}</p>
+            
         </form>
             
         </div>

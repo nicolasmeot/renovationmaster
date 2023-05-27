@@ -884,13 +884,13 @@ form {
   font-style: normal;
   font-weight: 500;
   font-size: 1em;
-  margin-left: 7.5vw;
+  margin-left: 3%;
 
   color: #4e139f;
 }
 
 .roomCartDescriptionDetails {
-  width: 80vw;
+  margin: 0 4%;
   font-family: "lato";
   font-style: normal;
   font-weight: 400;
@@ -899,12 +899,18 @@ form {
   color: #2b2a30;
 }
 
+.roomCartEFDateContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .roomCartEFDateLabel {
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
   font-size: 0.9em;
-  margin-right: 5vw;
+  margin-right: 10%;
+  text-align: end;
 
   color: #2b2a30;
 }
@@ -914,42 +920,44 @@ form {
   font-style: normal;
   font-weight: 700;
   font-size: 0.9em;
-  margin-right: 7.5vw;
+  margin-right: 4%;
+  text-align: end;
 
   color: #151417;
 }
 
 .roomCartProcessBar {
   width: 80vw;
-  height: 12vh;
+  height: 10px;
+  display: flex;
+  margin: 5% auto;
 }
 
 .roomCartFinishedBar {
-  width: 80vw;
-  height: 12vh;
+  width: 5%;
+  height: 10px;
 
   background: linear-gradient(270deg, #52cf71 0.38%, #cdf2d6 138.23%);
   border-radius: 2px;
 }
 
 .roomCartUnfinishedBar {
-  width: 80vw;
-  height: 12vh;
+  width: 95%;
+  height: 10px;
 
   background: #f3f3f4;
-  border-radius: 2px;
+  border-radius: 2px 2px 0px 0px;
 }
 
-.roomCartTaskContainer {
+.roomCartTaskCategory {
   width: fit-content;
   height: 26px;
+  text-align: center;
 
   background: #f9f3ff;
   border: 1px solid #c791ff;
   border-radius: 13px;
-}
 
-.roomCartTask {
   font-family: "lato";
   font-style: normal;
   font-weight: 400;
