@@ -1,20 +1,26 @@
-<h1>{{roomName}}</h1>
-<h2>Description</h2>
+{{>nav}}
 
-<h2>Origin Photo</h2>
+<div>
+    <h1>{{roomName}}</h1>
+    <h2>Description</h2>
 
-<h2>Current Photo</h2>
+    <h2>Origin Photo</h2>
 
-<h2>3D rendering</h2>
+    <h2>Current Photo</h2>
 
-<h2>Tasks details</h2>
+    <h2>3D rendering</h2>
 
-<form action="/projects/{{projectId}}/rooms/{{_id}}/tasks" method="post"> 
-    <label class="formLabel">
-    <input class="formInput" type="text" name="newTask" />
-    </label>
-    <button class="formBtn" type="submit">Create Task</button>
-    <p>{{#if errorMessage}}
-        {{errorMessage}}
-    {{/if}}</p>
-</form>
+    <h2>Tasks details</h2>
+
+    <form action="/projects/{{projectId}}/rooms/{{_id}}/tasks" method="post"> 
+        <label class="formLabel">
+        <input class="formInput" type="text" name="newTask" />
+        </label>
+        <button class="formBtn" type="submit">Create Task</button>
+        <p>{{#if errorMessage}}
+            {{errorMessage}}
+        {{/if}}</p>
+    </form>
+
+</div>
+
