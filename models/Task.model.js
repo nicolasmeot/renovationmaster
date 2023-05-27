@@ -8,7 +8,7 @@ const taskSchema = new Schema({
     procedure : String,
     position : String, 
     remarks : String,
-    details: [{
+    materials: [{
         material: String,
         materialCost: Number,
         done: Boolean,
