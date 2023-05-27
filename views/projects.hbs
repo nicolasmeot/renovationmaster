@@ -1,9 +1,17 @@
-<h1>Hello, this is the page with all of your projects</h1>
+<div class="display">
+    {{>nav}}
 
-<ul> 
-    {{#each projectsFromDB}}
-        <li><a href="/projects/{{id}}">{{firstName}}</a></li>
-    {{/each}}
-</ul>
+    <h1 class="sectionHeadLarge">Hello, this is the page with all of your projects</h1>
 
-<a href="/projects/new">Create new project</a>
+    <ul> 
+        {{#each projectsFromDB}}
+            <li><a href="/projects/{{id}}">{{firstName}}</a></li>
+        {{/each}}
+    </ul>
+
+    <a href="/projects/new">Create new project</a>
+
+    <img id="addProject" src="../images/addGradient.svg" alt="addProject">
+
+
+</div>
