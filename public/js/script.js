@@ -14,3 +14,13 @@ function iconClick(element) {
 
   element.classList.add("active");
 }
+
+
+const uploadPlanForm = document.querySelector('.floorPlanForm')
+const uploadPlanWindow = document.querySelector('.floorPlanWindow')
+
+if(uploadPlanWindow){
+  uploadPlanWindow.addEventListener("change", () => {
+    uploadPlanForm.submit()
+  })
+}
