@@ -1,25 +1,138 @@
-z<h1>Project details page</h1>
+{{>nav}}
 
-<ul> 
-    <h2>{{projectDetails.firstName}} {{projectDetails.lastName}}</h2>
-    <li>{{projectDetails.address}}</li>
-    <li>{{projectDetails.phoneNb}}</li>
-    <li>{{projectDetails.projectDescription}}</li>
-    <li>{{projectDetails.firstMeetingDate}}</li>
-    <li>Rooms</li>
-        {{#each roomDetails}}
-        <a href="/projects/{{projectId}}/rooms/{{_id}}">{{roomName}}</a>
-        {{/each}}
-    <li> 
+{{!-- <h1>Project details page</h1> --}}
+
+<div id="projectDetails">
+  <div id="clientInfo">
+   <h2 id="clientName">{{projectDetails.firstName}} {{projectDetails.lastName}}</h2>
+   <div id="clientContact">
+    {{projectDetails.address}}
+    {{projectDetails.phoneNb}}
+    </div>
+  </div>
+
+  <div id="projectDeadline" class="dateContainer">
+    <span id="projectDeadlineLabel" class="smallTitle">Project deadline:  </span><span id="projectDeadlineDate">{{projectDetails.projectDeadline}}</span>
+    
+  </div>
+
+  <div id="editDeleteProject">
+    <div id="editProject" class="editDeleteBtn">
+      <img class="editIcon" src="../images/edit.svg" alt="editIcon">
+      <a class="editLink" href="#">Edit info / Delete project</a>
+    </div>
+
+  </div>
+
+  <p id="statusBarTitle">Select work status:</p>
+  <div class="statusBarContainer">
+    
+    <div class="statusBar">
+      <div class="statusBarLine">
+
+      </div>
+      <div class="statusIcon" onclick="iconClick(this)">
+        <img class="iconLine" src="../images/meetingIconLine.svg" alt="meetingIcon">
+        
+      </div>
+
+      <div class="statusIcon" onclick="iconClick(this)">
+        <img class="iconLine" src="../images/designIconLine.svg" alt="designIcon">
+        
+      </div>
+
+      <div class="statusIcon" onclick="iconClick(this)">
+        <img class="iconLine" src="../images/materialIconLine.svg" alt="designIcon">
+        
+      </div>
+
+      <div class="statusIcon" onclick="iconClick(this)">
+        <img class="iconLine" src="../images/workinprogressIconLine.svg" alt="workinprogressIcon">
+        
+      </div>
+
+      <div class="statusIcon" onclick="iconClick(this)">
+        <img class="iconLine" src="../images/finishedIconLine.svg" alt="finishedIcon">
+        
+      </div>
+
+    </div>
+
+    <div class="statusInfo">
+      <span class="status">Meeting</span>
+      <span class="status">Design</span>
+      <span class="status">Material</span>
+      <span class="status">Work in progress</span>
+      <span class="status">Finished</span>
+
+    </div>
+      
+
+  </div>
+
+
+  <div id="nextMeeting" class="section">
+    <h2 class="sectionHead">Next meeting</h2>
+    <div id="nextMeetingDetails" class="sectionContainer">
+      <p>{{projectDetails.firstMeetingAddress}}</p>
+      <p>{{projectDetails.firstMeetingDate}}</p>
+
+    </div>
+  </div>
+
+  <div id="addMeeting">
+    <div id="addMeetingBtn" class="editDeleteBtn">
+      <img class="editIcon" src="../images/add.svg" alt="addIcon">
+      <a class="editLink" href="#">Add meeting</a>
+    </div>
+  </div>
+
+  <div id="editMeeting">
+    <div id="editMeetingBtn" class="editDeleteBtn">
+      <img class="editIcon" src="../images/edit.svg" alt="editIcon">
+      <a class="editLink" href="#">Edit meeting</a>
+    </div>
+  </div>
+
+
+  <div id="projectDescription" class="section">
+    <h2 class="sectionHead">Project description</h2>
+    <div id="projectDescriptionDetails" class="sectionContainer">
+    <p>{{projectDetails.projectDescription}}</p>
+    </div>
+  </div>
+
+  <div id="floorplan" class="section">
+    <h2 class="sectionHead">Floor plan</h2>
+    <div id="floorplanPhotos" class="photoSectionContainer">
+      <img class="addPhotoIcon" src="../images/addPhoto.svg" alt="addPhoto">
+    </div>
+  </div>
+
+
+  
+
+  <h2 class="sectionHead">Rooms</h2>
+    {{#each roomDetails}}
+    <a href="/projects/{{projectId}}/rooms/{{_id}}">{{roomName}}</a>
+    {{/each}}
+  
+  <div id="roomCreationForm">
+    <p class="smallTitle">Type in room name</p>
     <form action="/projects/{{_id}}/rooms" method="post"> 
       <label class="formLabel">
         <input class="formInput" type="text" name="roomName" />
       </label>
-      <button class="formBtn" type="submit">Create Room</button>
+      <button id="roomCreationFormBtn" class="roundGradientBtn" type="submit">Create Room</button>
       <p>{{#if errorMessage}}
           {{errorMessage}}
         {{/if}}</p>
-    </form>
+  </form>
 
-    </li>
-</ul>
+  </div>
+  
+
+</div>
+
+
+    

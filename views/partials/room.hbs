@@ -1,0 +1,50 @@
+{{#each roomDetails}}
+    <a href="/projects/{{projectId}}/rooms/{{_id}}">
+        <div class="roomCart">
+            <div class="roomName">
+                {{roomName}}
+            </div>
+
+            <div class="roomCartPhotoSection">
+                <div class="roomCartPhoto">
+                    {{roomInitialPictures[0]}}
+                </div>
+
+                <img class="photoArrow" src="/images/roomCartPhotoArrow.svg" alt="photoArrow">
+
+                <div class="roomCartPhoto">
+                    {{threeDRendering}}
+
+                </div>
+                
+            </div>
+
+            <h2 class="roomCartDescription">Description</h2>
+            <p class="roomCartDescriptionDetails">{{roomDescription}}</p>
+
+            <h3 class="roomCartEFDateLabel">Estimated finish date</h3>
+            <p class="roomCartEFDate">{{finishDate}}</p>
+
+            <div class="roomCartProcessBar">
+                <div class="roomCartFinishedBar">
+                </div>
+
+                <div class="roomCartUnfinishedBar">
+                </div>
+            </div>
+
+            <div class="roomCartTaskContainer">
+                <span class="roomCartTask">
+                    {{#each tasks}}
+                        {{this.type}}
+                    {{/each}}
+                </span>
+            </div>
+
+            <a class="roomLink" href="">More details</a>
+
+            
+        </div>
+    
+    </a>
+{{/each}}

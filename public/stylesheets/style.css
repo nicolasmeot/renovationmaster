@@ -468,7 +468,7 @@ form {
   color: #2081e4;
 }
 
-#deleteProfileLink {
+.deleteLink {
   color: #fc1d20;
 }
 
@@ -506,4 +506,361 @@ form {
 
 #newProjectBtn {
   margin-top: 2vh;
+}
+
+/* 
+██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗    ██████╗ ███████╗████████╗ █████╗ ██╗██╗     ███████╗
+██╔══██╗██╔══██╗██╔═══██╗     ██║██╔════╝██╔════╝╚══██╔══╝    ██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██║██║     ██╔════╝
+██████╔╝██████╔╝██║   ██║     ██║█████╗  ██║        ██║       ██║  ██║█████╗     ██║   ███████║██║██║     ███████╗
+██╔═══╝ ██╔══██╗██║   ██║██   ██║██╔══╝  ██║        ██║       ██║  ██║██╔══╝     ██║   ██╔══██║██║██║     ╚════██║
+██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║       ██████╔╝███████╗   ██║   ██║  ██║██║███████╗███████║
+╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝       ╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚══════╝╚══════╝ */
+
+#projectDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#clientInfo {
+  width: 92vw;
+  height: 15vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  text-align: end;
+}
+
+#clientName {
+  max-width: 30vw;
+  text-align: start;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2em;
+  margin-top: auto;
+
+  color: #2b2a30;
+}
+
+#clientContact {
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1em;
+
+  color: #151417;
+}
+
+#projectDeadline {
+  display: block;
+  width: 92vw;
+  margin-top: 5vh;
+}
+
+.smallTitle {
+  font-family: "Lato";
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1em;
+
+  color: #151417;
+}
+
+#projectDeadlineDate {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
+
+  color: #151417;
+}
+
+#editDeleteProject {
+  margin-top: 1vh;
+  margin-left: auto;
+  margin-right: 2.5vw;
+}
+
+#statusBarTitle {
+  margin-left: 2.5vw;
+  margin-right: auto;
+  font-family: "Lato";
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1em;
+
+  color: #151417;
+}
+
+.statusBarContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.statusInfo {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.status {
+  width: 48px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8em;
+  margin: 0 4vw;
+  padding: 0;
+
+  color: #151417;
+}
+
+.statusBar {
+  position: relative;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  margin: 2vh auto;
+}
+
+.statusIcon {
+  flex-grow: 1;
+  text-align: center;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.statusIcon.active {
+  transform: scale(1.5);
+}
+
+.statusBarLine {
+  position: absolute;
+  top: 35%;
+  left: 10%;
+
+  width: 80%;
+  height: 4px;
+  background: #a293fc;
+}
+
+.iconLine {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  background-color: #a293fc;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.statusIcon.active .iconLine {
+  background-color: #4e139f;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3vh 2.5vw;
+}
+
+.sectionHead {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1em;
+
+  color: #2b2a30;
+}
+
+.sectionContainer {
+  width: 92vw;
+  display: flex;
+  justify-content: space-between;
+
+  background: #ffffff;
+  box-shadow: 0px 4.12821px 4.12821px #ebebf4;
+  border-radius: 10.3205px;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.9em;
+
+  color: #161518;
+}
+
+.sectionContainer p {
+  padding: 1% 3%;
+}
+
+#addMeeting {
+  margin-left: 2.5vw;
+  margin-right: auto;
+}
+
+#editMeeting {
+  margin-left: 2.5vw;
+  margin-right: auto;
+}
+
+.photoSectionContainer {
+  width: 92vw;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fbfbfc;
+  border: 1px dashed #c593fc;
+  border-radius: 2px;
+}
+
+.addPhotoIcon {
+  width: 75px;
+  height: 75px;
+}
+
+.roomLink {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.1em;
+
+  color: #2081e4;
+}
+
+#roomCreationForm {
+  width: 95vw;
+}
+
+/* 
+██████╗  ██████╗  ██████╗ ███╗   ███╗     ██████╗ █████╗ ██████╗ ████████╗
+██╔══██╗██╔═══██╗██╔═══██╗████╗ ████║    ██╔════╝██╔══██╗██╔══██╗╚══██╔══╝
+██████╔╝██║   ██║██║   ██║██╔████╔██║    ██║     ███████║██████╔╝   ██║   
+██╔══██╗██║   ██║██║   ██║██║╚██╔╝██║    ██║     ██╔══██║██╔══██╗   ██║   
+██║  ██║╚██████╔╝╚██████╔╝██║ ╚═╝ ██║    ╚██████╗██║  ██║██║  ██║   ██║   
+╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝     ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝    */
+
+.roomcart {
+  width: 92vw;
+  min-height: 50vh;
+  left: 19px;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 4px #ebebf4;
+  border-radius: 15px;
+}
+
+.roomName {
+  min-width: 20vw;
+  height: 16vh;
+
+  background: #4e139f;
+}
+
+.roomCartPhotoSection {
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.roomCartPhoto {
+  width: 30vw;
+  height: 10vh;
+
+  background: #f3f3f4;
+}
+
+.photoArrow {
+  width: 10vw;
+}
+
+.roomCartDescription {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1em;
+  margin-left: 7.5vw;
+
+  color: #4e139f;
+}
+
+.roomCartDescriptionDetails {
+  width: 80vw;
+  font-family: "lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.8em;
+
+  color: #2b2a30;
+}
+
+.roomCartEFDateLabel {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.9em;
+  margin-right: 5vw;
+
+  color: #2b2a30;
+}
+
+.roomCartEFDate {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9em;
+  margin-right: 7.5vw;
+
+  color: #151417;
+}
+
+.roomCartProcessBar {
+  width: 80vw;
+  height: 12vh;
+}
+
+.roomCartFinishedBar {
+  width: 80vw;
+  height: 12vh;
+
+  background: linear-gradient(270deg, #52cf71 0.38%, #cdf2d6 138.23%);
+  border-radius: 2px;
+}
+
+.roomCartUnfinishedBar {
+  width: 80vw;
+  height: 12vh;
+
+  background: #f3f3f4;
+  border-radius: 2px;
+}
+
+.roomCartTaskContainer {
+  width: fit-content;
+  height: 26px;
+
+  background: #f9f3ff;
+  border: 1px solid #c791ff;
+  border-radius: 13px;
+}
+
+.roomCartTask {
+  font-family: "lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
+
+  color: #7a24f7;
+}
+
+#roomCreationFormBtn {
+  display: inline;
+  width: 25vw;
 }

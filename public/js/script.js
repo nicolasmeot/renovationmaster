@@ -5,3 +5,12 @@ document.addEventListener(
   },
   false
 );
+
+function iconClick(element) {
+  let items = document.getElementsByClassName("statusIcon");
+  for (let i = 0; i < items.length; i++) {
+    items[i].classList.remove("active");
+  }
+
+  element.classList.add("active");
+}
