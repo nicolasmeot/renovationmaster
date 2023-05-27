@@ -683,10 +683,11 @@ form {
   width: 92vw;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   background: #ffffff;
   box-shadow: 0px 4.12821px 4.12821px #ebebf4;
-  border-radius: 10.3205px;
+  border-radius: 10px;
 
   font-family: "Lato";
   font-style: normal;
@@ -758,10 +759,17 @@ form {
 }
 
 .roomName {
-  min-width: 20vw;
-  height: 16vh;
-
+  max-width: 45vw;
+  padding: 10px;
+  border-radius: 10px 10px 50px 10px;
   background: #4e139f;
+
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1em;
+
+  color: #ffffff;
 }
 
 .roomCartPhotoSection {
@@ -773,6 +781,7 @@ form {
 .roomCartPhoto {
   width: 30vw;
   height: 10vh;
+  margin: 10px;
 
   background: #f3f3f4;
 }
@@ -863,4 +872,57 @@ form {
 #roomCreationFormBtn {
   display: inline;
   width: 25vw;
+}
+
+/* 
+██████╗  ██████╗  ██████╗ ███╗   ███╗    ██████╗ ███████╗████████╗ █████╗ ██╗██╗     ███████╗
+██╔══██╗██╔═══██╗██╔═══██╗████╗ ████║    ██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██║██║     ██╔════╝
+██████╔╝██║   ██║██║   ██║██╔████╔██║    ██║  ██║█████╗     ██║   ███████║██║██║     ███████╗
+██╔══██╗██║   ██║██║   ██║██║╚██╔╝██║    ██║  ██║██╔══╝     ██║   ██╔══██║██║██║     ╚════██║
+██║  ██║╚██████╔╝╚██████╔╝██║ ╚═╝ ██║    ██████╔╝███████╗   ██║   ██║  ██║██║███████╗███████║
+╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝    ╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚══════╝╚══════╝ */
+
+.projectRoomName {
+  max-width: 45vw;
+  padding: 10px;
+  margin-top: 1px;
+  border-radius: 0px 0px 50px 0px;
+  background: #4e139f;
+
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1em;
+
+  color: #ffffff;
+}
+
+.roomPhoto {
+  width: 40vw;
+  height: 13vh;
+  margin: 10px;
+
+  background: #f3f3f4;
+}
+
+.addRoomPhoto {
+  width: 40vw;
+  height: 13vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  background: #fbfbfc;
+  border: 1px dashed #c593fc;
+  border-radius: 2px;
+}
+
+.sectionHeadLarge {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.2em;
+  padding: 10px;
+
+  color: #2b2a30;
 }

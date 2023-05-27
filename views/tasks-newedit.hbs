@@ -1,10 +1,11 @@
 {{>nav}}
 
-<h1>New Task</h1>
+
 
 <div class="display">
+  <h1 class="sectionHeadLarge">New Task</h1>
 
-  <div id="newProjectMain">
+  <div >
     <div id="newProjectContainer">
       <form class="longForm" action="/projects/{{projectId}}/rooms/{{roomId}}/tasks/{{_id}}/edit" method="post">
         <label class="formLabel">Category
@@ -40,7 +41,7 @@
         <label class="formLabel">Finish Date
           <input class="formInput" type="date" name="finishDate" />
         </label>
-        <button class="formBtn" type="submit">Save Task</button>
+        <button class="roundGradientBtn" type="submit">Save Task</button>
         <p>{{#if errorMessage}}
             {{errorMessage}}
           {{/if}}</p>
