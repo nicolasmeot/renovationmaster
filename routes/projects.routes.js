@@ -3,6 +3,7 @@ const router = require("express").Router();
 const User = require("../models/User.model.js");
 const Project = require("../models/Project.model.js");
 const Room = require("../models/Room.model.js");
+const dayjs = require("dayjs");
 
 router.get("/", (req, res, next) => {
   console.log(req.session.currentUser && req.session.currentUser.projects);
@@ -49,26 +50,33 @@ router.post("/new", (req, res, next) => {
 
 router.get("/:id", async (req, res, next) => {
   const projectId = req.params.id;
-  console.log(projectId)
+  console.log(projectId);
   try {
     projectDetails = await Project.findById(projectId);
-    roomDetails = await Room.find({projectId : projectId})
+    roomDetails = await Room.find({ projectId: projectId });
     console.log(projectDetails);
-    res.render("project-details", {projectDetails, roomDetails});
-  } 
-  catch(error) {console.log("an error happened", error)};
-})
+    projectDetails.projectDeadlineFormatted = dayjs(
+      projectDetails.projectDeadline
+    ).format("YYYY-MM-DD");
+    res.render("project-details", { projectDetails, roomDetails });
+  } catch (error) {
+    console.log("an error happened", error);
+  }
+});
 
 router.post("/:projectId/rooms", (req, res, next) => {
-  const roomInfo ={
-    roomName : req.body.roomName,
-    projectId : req.params.projectId,
-  }
-  console.log(roomInfo)
-  Room 
-    .create(roomInfo)
-    .then((newRoom) => res.redirect(`/projects/${newRoom.projectId}/rooms/${newRoom._id}`) )
-    .catch((error) => {console.log("an error happened",error)})
+  const roomInfo = {
+    roomName: req.body.roomName,
+    projectId: req.params.projectId,
+  };
+  console.log(roomInfo);
+  Room.create(roomInfo)
+    .then((newRoom) =>
+      res.redirect(`/projects/${newRoom.projectId}/rooms/${newRoom._id}`)
+    )
+    .catch((error) => {
+      console.log("an error happened", error);
+    });
 });
 
 module.exports = router;
