@@ -114,25 +114,38 @@
   <div id="floorplan" class="section">
     <h2 class="sectionHead">Floor plan</h2>
     <div id="floorplanPhotos" class="roomPhotoContainer">
-        <!-- Mise en page si une image a déjà été uploadée --> 
-        {{#if projectDetails.floorPlan}}            
-            <img src="{{projectDetails.floorPlan}}" alt="FloorPlan"/>
-        {{else}}
-        <form action="/projects/{{projectDetails._id}}/photos" method="post" enctype="multipart/form-data" class="floorPlanForm"> 
-            <label id="addFloorPlan"> 
-                <input id="addFloorPlanInput" type="file" name="floorPlan" class="floorPlanWindow"/>
-                <img src="/images/roomPhotoBg.svg" alt="">
-            </label>
+        <!-- Mise en page si une image a déjà été uploadée -->
+        <ul>
+          {{!-- {{#each this.floorPlan}} --}}
+          {{#if projectDetails.floorPlan}}
+           
+              <li>
+                <img class="photo" src="{{projectDetails.floorPlan}}" alt="FloorPlan"/>
+                <img class="deletePhoto" src="/images/deleteGray.svg" alt="">
+              </li>
+              
             
-            <p>{{#if errorMessage}}
-                {{errorMessage}}
-                {{/if}}</p>
-        </form>
-        {{/if}}
+          {{/if}}
+          
+          <li>
+            <form action="/projects/{{projectDetails._id}}/photos" method="post" enctype="multipart/form-data" class="addPhotoForm"> 
+              <label class="addPhoto"> 
+                  <input class="addPhotoInput" type="file" name="floorPlan" class="addPhotoWindow"/>
+                  <img src="/images/roomPhotoBg.svg" alt="">
+              </label>
+              
+              <p>{{#if errorMessage}}
+                  {{errorMessage}}
+                  {{/if}}</p>
+            </form>
+          </li>
+          
+        </ul>
         
     </div>
-    <img id="deleteFloorplan" src="/images/deleteGray.svg" alt="">
+    
   </div>
+  
 
 <!-- Link to modify the picture once a picture has been uploaded --> 
 <form action="/projects/{{projectDetails._id}}/photos/update" method="post" enctype="multipart/form-data" class="floorPlanForm"> 

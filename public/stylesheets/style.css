@@ -834,7 +834,6 @@ form {
 }
 
 #floorplanPhotos {
-  position: relative;
 }
 
 #floorplanPhotos form {
@@ -842,30 +841,39 @@ form {
   margin: auto;
 }
 
-#floorplanPhotos img {
-  width: 80vw;
+.photo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 
   padding: 5%;
   margin: auto;
 }
 
-#addFloorPlan {
+.addPhotoForm {
+  height: 100%;
+}
+
+.addPhoto {
+  height: 100%;
   display: inline-block;
   background-color: transparent;
   cursor: pointer;
 }
 
-#addFloorPlan img {
-  width: 100%;
+.addPhoto img {
+  height: 100%;
 }
 
-#addFloorPlanInput {
+.addPhotoInput {
   display: none;
 }
 
-#deleteFloorplan {
+.deletePhoto {
   position: absolute;
-  bottom: -35%;
+  bottom: 0;
   right: 3%;
   margin: 3%;
 }
@@ -1122,6 +1130,7 @@ form {
 
 .roomPhotoContainer {
   width: 92vw;
+  height: 15vh;
   display: flex;
 
   justify-content: space-between;
@@ -1147,18 +1156,18 @@ form {
   list-style: none;
 
   display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: auto;
   scroll-snap-type: x mandatory;
 }
 
 .roomPhotoContainer li {
-  width: 50%;
+  position: relative;
+  max-width: 50%;
   height: 13vh;
-  margin: 3% auto;
+  margin: auto;
 
-  background-image: url(/images/roomPhotoBg.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
   border: 0px solid;
   scroll-snap-align: start;
 
@@ -1166,7 +1175,8 @@ form {
 }
 
 .addRoomPhoto {
-  width: 40vw;
+  position: relative;
+  max-width: 40vw;
   height: 13vh;
   display: flex;
   justify-content: center;
