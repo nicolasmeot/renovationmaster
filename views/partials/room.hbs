@@ -19,11 +19,41 @@
                 
             </div>
 
-                {{!-- {{ >roomdescription}} --}}
+        <h2 class="roomCartDescription">Description</h2>
+        <p class="roomCartDescriptionDetails">{{roomDescription}}</p>
+        
 
-            <a class="roomLink" href="">More details <img src="/images/moreDetailsArrow.svg" alt=""></a>
+            <div class="roomCartEFDateContainer">
+                <div class="smallTitle">Estimated finish date :</div>
+                    <span class="roomCartEFDate">{{finishDate}}</span>
+                
+            </div>
+        
+
+
+        <div class="roomCartProcessBar">
+        <div class="roomCartFinishedBar">
+        </div>
+
+        <div class="roomCartUnfinishedBar">
+        </div>
+        </div>
+
+        <div class="roomCartTaskContainer">
+            <div class="roomCartTaskCategory">
+                
+                    {{#each tasks}}
+                    {{this.type}}
+                    {{/each}}
+                
+            </div>
 
         </div>
+
+
+        <a class="roomLink" href="">More details <img src="/images/moreDetailsArrow.svg" alt=""></a>
+
+    </div>
     
 
     
