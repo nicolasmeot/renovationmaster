@@ -129,7 +129,7 @@ form {
 
   font-family: "Lato";
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 1em;
 
   background-color: #ffffff;
@@ -152,7 +152,7 @@ form {
 
   font-family: "Lato";
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 1em;
 
   background: linear-gradient(
@@ -479,6 +479,14 @@ form {
   color: #fc1d20;
 }
 
+.deleteGrayIcon {
+  width: 20px;
+  height: 20px;
+  padding: 3%;
+
+  color: #82818f;
+}
+
 /* 
 ██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗███████╗
 ██╔══██╗██╔══██╗██╔═══██╗     ██║██╔════╝██╔════╝╚══██╔══╝██╔════╝
@@ -676,7 +684,7 @@ form {
 }
 
 #statusBarTitle {
-  margin-left: 2.5vw;
+  margin-left: 4vw;
   margin-right: auto;
   font-family: "Lato";
   font-style: italic;
@@ -756,7 +764,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3vh 2.5vw;
+  padding: 1.5vh 2.5vw;
 }
 
 .sectionHead {
@@ -764,6 +772,7 @@ form {
   font-style: normal;
   font-weight: 700;
   font-size: 1em;
+  padding-top: 1.5vh;
 
   color: #2b2a30;
 }
@@ -771,6 +780,7 @@ form {
 .sectionContainer {
   width: 92vw;
   display: flex;
+
   justify-content: space-between;
   align-items: center;
 
@@ -790,14 +800,22 @@ form {
   padding: 1% 3%;
 }
 
-#addMeeting {
-  margin-left: 2.5vw;
-  margin-right: auto;
+#nextMeetingDetails {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-#editMeeting {
-  margin-left: 2.5vw;
-  margin-right: auto;
+#addeditMeeting {
+  width: 92%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+}
+
+#projectDescriptionDetails p {
+  width: 93%;
 }
 
 .photoSectionContainer {
@@ -812,10 +830,8 @@ form {
 }
 
 .photoSectionContainer img {
-  width : 100%
+  width: 100%;
 }
-
-
 
 .addPhotoIcon {
   width: 75px;
@@ -823,16 +839,42 @@ form {
 }
 
 .roomLink {
+  display: flex;
+  align-items: center;
   font-family: "Lato";
   font-style: normal;
   font-weight: 700;
   font-size: 1.1em;
+  margin-bottom: 3%;
+  margin-left: auto;
 
   color: #2081e4;
 }
 
+#roomCreation {
+  width: 92vw;
+}
+
 #roomCreationForm {
-  width: 95vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3vh;
+}
+
+#roomFormInput {
+  width: 60vw;
+}
+
+#roomCreationLabel {
+  margin-bottom: 0;
+}
+
+#roomCreationFormBtn {
+  width: fit-content;
+  margin-left: auto;
+  padding: 0.5em;
 }
 
 /* 
@@ -846,7 +888,9 @@ form {
 .roomcart {
   width: 92vw;
   min-height: 50vh;
-  left: 19px;
+
+  display: flex;
+  flex-direction: column;
 
   background: #ffffff;
   box-shadow: 0px 4px 4px #ebebf4;
@@ -854,8 +898,9 @@ form {
 }
 
 .roomName {
-  max-width: 45vw;
-  padding: 10px;
+  width: fit-content;
+  padding: 2% 6% 2% 3%;
+  margin-right: auto;
   border-radius: 10px 10px 50px 10px;
   background: #4e139f;
 
@@ -867,10 +912,17 @@ form {
   color: #ffffff;
 }
 
+.roomCartMain {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .roomCartPhotoSection {
   width: 80vw;
   display: flex;
   justify-content: space-between;
+  margin: 3% auto;
 }
 
 .roomCartPhoto {
@@ -915,7 +967,7 @@ form {
   font-style: normal;
   font-weight: 400;
   font-size: 0.9em;
-  margin-right: 10%;
+  margin: auto 0 auto auto;
   text-align: end;
 
   color: #2b2a30;
@@ -972,11 +1024,6 @@ form {
   color: #7a24f7;
 }
 
-#roomCreationFormBtn {
-  display: inline;
-  width: 25vw;
-}
-
 /* 
 ██████╗  ██████╗  ██████╗ ███╗   ███╗    ██████╗ ███████╗████████╗ █████╗ ██╗██╗     ███████╗
 ██╔══██╗██╔═══██╗██╔═══██╗████╗ ████║    ██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██║██║     ██╔════╝
@@ -986,8 +1033,8 @@ form {
 ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝    ╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚══════╝╚══════╝ */
 
 .projectRoomName {
-  max-width: 45vw;
-  padding: 10px;
+  width: fit-content;
+  padding: 2% 6% 2% 3%;
   margin-top: 1px;
   border-radius: 0px 0px 50px 0px;
   background: #4e139f;
@@ -998,6 +1045,34 @@ form {
   font-size: 1em;
 
   color: #ffffff;
+}
+
+#roomDescriptionInput {
+  width: 92vw;
+  height: 8vh;
+  margin: 0 auto;
+}
+
+#roomDescriptionLabel {
+  margin-bottom: 3%;
+}
+
+#roomDescriptionSaveEdit {
+  width: 92vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto 5vh auto;
+}
+
+#roomDescriptionFormBtn {
+  width: fit-content;
+  margin-left: auto;
+}
+
+#roomCartEFDateInput {
+  width: 40vw;
+  margin: 2vh 4vw;
 }
 
 .roomPhoto {
@@ -1028,4 +1103,21 @@ form {
   padding: 10px;
 
   color: #2b2a30;
+}
+
+#taskContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#createTask {
+  margin: 10% auto 10% auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#createTaskBtn {
+  margin-left: auto;
 }

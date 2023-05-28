@@ -54,18 +54,16 @@
 
     <div class="section">
         <h2 class="sectionHead">Task details</h2>
-        <div class="sectionContainer">
+        <div id="taskContainer" class="sectionContainer">
             
-            <form action="/projects/{{projectId}}/rooms/{{_id}}/tasks" method="post"> 
-                <label class="formLabel">
-                <input class="formInput" type="text" name="newTask" />
-                </label>
-                <button class="roundGradientBtn" type="submit">Create Task</button>
+            <form id="createTask" action="/projects/{{projectId}}/rooms/{{_id}}/tasks" method="post"> 
+                
+                <button id="createTaskBtn" class="roundGradientBtn" type="submit">Create Task</button>
                 <p>{{#if errorMessage}}
                     {{errorMessage}}
                 {{/if}}</p>
             
-        </form>
+            </form>
             
         </div>
     </div>

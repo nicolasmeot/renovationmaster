@@ -1,13 +1,13 @@
-{{#each roomDetails}}
-    <a href="/projects/{{projectId}}/rooms/{{_id}}">
-        <div class="roomCart">
-            <div class="roomName">
-                {{roomName}}
-            </div>
+<div class="sectionContainer">
+    <div class="roomCartMain">
+
+        <div class="roomName">
+            {{roomName}}
+        </div>
 
             <div class="roomCartPhotoSection">
                 <div class="roomCartPhoto">
-                    {{roomInitialPictures[0]}}
+                    {{roomInitialPictures}}
                 </div>
 
                 <img class="photoArrow" src="/images/roomCartPhotoArrow.svg" alt="photoArrow">
@@ -19,12 +19,14 @@
                 
             </div>
 
-            {{ >room-description }}
+                {{!-- {{ >roomdescription}} --}}
 
-            <a class="roomLink" href="">More details <img src="/public/images/moreDetailsArrow.svg" alt=""></a>
+            <a class="roomLink" href="">More details <img src="/images/moreDetailsArrow.svg" alt=""></a>
 
-            
         </div>
     
-    </a>
-{{/each}}
+
+    
+</div>
+
+

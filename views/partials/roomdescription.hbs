@@ -1,11 +1,37 @@
 <h2 class="roomCartDescription">Description</h2>
 <p class="roomCartDescriptionDetails">{{roomDescription}}</p>
+<form id="roomDescriptionForm" action="" method="post"> 
+      <label id="roomDescriptionLabel" class="formLabel">
+        <input id="roomDescriptionInput" class="formInput" type="text" name="roomDescription"/>
+      </label>
 
-<div class="roomCartEFDateContainer">
-    <span class="roomCartEFDateLabel">Estimated finish date</span>
-    <span class="roomCartEFDate">{{finishDate}}</span>
+      <div class="roomCartEFDateContainer">
+          <label class="roomCartEFDateLabel">Estimated finish date :</label>
+            <span class="roomCartEFDate">{{finishDate}}</span>
+            <input id="roomCartEFDateInput" class="formInput" type="text" name="roomCartEFDate"/>
+          </label>
+      </div>
 
-</div>
+
+      <div id="roomDescriptionSaveEdit">
+        <div id="editRoomDescription">
+          <div id="editRoomDescriptionBtn" class="editDeleteBtn">
+            <img class="editIcon" src="/images/edit.svg" alt="editIcon">
+            <a class="editLink" href="#">Edit</a>
+          </div>
+        </div>
+
+        <button id="roomDescriptionFormBtn" class="roundGradientBtn" type="submit">Save</button>
+        <p>{{#if errorMessage}}
+            {{errorMessage}}
+          {{/if}}</p>
+
+      </div>
+      
+</form>
+
+
+
 
 
 <div class="roomCartProcessBar">
