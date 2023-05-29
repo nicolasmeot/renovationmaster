@@ -15,11 +15,6 @@ function iconClick(element) {
   element.classList.add("active");
 }
 
-function deadlineDate() {
-  let date = document.getElementById("projectDeadlineInput").value;
-  document.getElementById("projectDeadlineDate").innerHTML = date;
-}
-
 const uploadPlanForm = document.querySelector(".floorPlanForm");
 const uploadPlanWindow = document.querySelector(".floorPlanWindow");
 

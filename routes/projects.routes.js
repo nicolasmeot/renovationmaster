@@ -5,9 +5,9 @@ const Project = require("../models/Project.model.js");
 const Room = require("../models/Room.model.js");
 const dayjs = require("dayjs");
 
-const fileUploader = require('../config/cloudinary.config');
+const fileUploader = require("../config/cloudinary.config");
 
-// Route to display the welcome page 
+// Route to display the welcome page
 
 router.get("/", (req, res, next) => {
   console.log(req.session.currentUser && req.session.currentUser.projects);
@@ -49,9 +49,7 @@ router.post("/new", (req, res, next) => {
   Project.create(projectInfo)
     .then((projectFromDB) => {
       console.log(projectFromDB._id);
-      res.redirect(
-        `/projects/${projectFromDB._id}`
-      ); 
+      res.redirect(`/projects/${projectFromDB._id}`);
     })
     .catch((error) => next(error));
 });
@@ -67,6 +65,9 @@ router.get("/:id", async (req, res, next) => {
     console.log(projectDetails);
     projectDetails.projectDeadlineFormatted = dayjs(
       projectDetails.projectDeadline
+    ).format("YYYY-MM-DD");
+    projectDetails.firstMeetingDateFormatted = dayjs(
+      projectDetails.firstMeetingDate
     ).format("YYYY-MM-DD");
     res.render("project-details", { projectDetails, roomDetails });
   } catch (error) {
@@ -93,24 +94,42 @@ router.post("/:projectId/rooms", (req, res, next) => {
 
 //Route to upload the floor plan
 
+router.post(
+  "/:projectId/photos",
+  fileUploader.single("floorPlan"),
+  (req, res) => {
+    const projectId = req.params.projectId;
+    const floorPlan = req.file.path;
+    console.log("floorPlan :", floorPlan);
+    Project.findByIdAndUpdate(
+      projectId,
+      { floorPlan: floorPlan },
+      { new: true }
+    )
+      .then(() => res.redirect(`/projects/${projectId}`))
+      .catch((error) =>
+        console.log(`Error while uploading the floorPlan: ${error}`)
+      );
+  }
+);
 
-router.post('/:projectId/photos', fileUploader.single('floorPlan'), (req, res) => {
-  const projectId = req.params.projectId;
-  const floorPlan = req.file.path;
-  console.log('floorPlan :',floorPlan)
-  Project.findByIdAndUpdate(projectId, {floorPlan: floorPlan}, { new: true })
-    .then(() => res.redirect(`/projects/${projectId}`))
-    .catch(error => console.log(`Error while uploading the floorPlan: ${error}`));
-})
-
-router.post('/:projectId/photos/update', fileUploader.single('floorPlan'), (req, res) => {
-  const projectId = req.params.projectId;
-  const floorPlan = req.file.path;
-  console.log('floorPlan :',floorPlan)
-  Project.findByIdAndUpdate(projectId, {floorPlan: floorPlan}, { new: true })
-    .then(() => res.redirect(`/projects/${projectId}`))
-    .catch(error => console.log(`Error while uploading the floorPlan: ${error}`));
-})
-
+router.post(
+  "/:projectId/photos/update",
+  fileUploader.single("floorPlan"),
+  (req, res) => {
+    const projectId = req.params.projectId;
+    const floorPlan = req.file.path;
+    console.log("floorPlan :", floorPlan);
+    Project.findByIdAndUpdate(
+      projectId,
+      { floorPlan: floorPlan },
+      { new: true }
+    )
+      .then(() => res.redirect(`/projects/${projectId}`))
+      .catch((error) =>
+        console.log(`Error while uploading the floorPlan: ${error}`)
+      );
+  }
+);
 
 module.exports = router;
