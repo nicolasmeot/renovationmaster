@@ -1,16 +1,19 @@
-const router = require("express").Router()
+const router = require("express").Router();
 
-const Project = require("../models/Project.model.js")
-const Room = require("../models/Room.model.js")
-const Task = require("../models/Task.model.js")
+const Project = require("../models/Project.model.js");
+const Room = require("../models/Room.model.js");
+const Task = require("../models/Task.model.js");
 
 router.get("/:projectId/rooms/:id", (req, res, next) => {
-    const roomId = req.params.id
-    Room
-        .findById(roomId)
-        .then(roomFromDB => res.render("room-details",roomFromDB))
-        .catch((err) => next(err))
-})
+  const roomId = req.params.id;
+  Room.findById(roomId)
+    .then((roomFromDB) =>
+      res.render("room-details", {
+        roomFromDB,
+      })
+    )
+    .catch((err) => next(err));
+});
 
 //Route to upload Room's img
 /*
@@ -25,35 +28,41 @@ router.post('/:projectId/rooms/:id/photos', fileUploader.fields({name:"roomImg",
   })
 */
 
-router.post("/:projectId/rooms/:roomId/tasks", (req,res,next) => {
-    const taskInfo = {
-        projectId : req.params.projectId,
-        roomId : req.params.roomId,
-        randomParam : "random",
-      }
-      console.log(taskInfo)
-      Task 
-        .create(taskInfo)
-        .then((taskFromDB) => res.redirect(`/projects/${taskFromDB.projectId}/rooms/${taskFromDB.roomId}/tasks/${taskFromDB._id}/edit`) )
-        .catch((error) => {console.log("an error happened",error)}) 
-})
+router.post("/:projectId/rooms/:roomId/tasks", (req, res, next) => {
+  const taskInfo = {
+    projectId: req.params.projectId,
+    roomId: req.params.roomId,
+    randomParam: "random",
+  };
+  console.log(taskInfo);
+  Task.create(taskInfo)
+    .then((taskFromDB) =>
+      res.redirect(
+        `/projects/${taskFromDB.projectId}/rooms/${taskFromDB.roomId}/tasks/${taskFromDB._id}/edit`
+      )
+    )
+    .catch((error) => {
+      console.log("an error happened", error);
+    });
+});
 
 router.get("/:projectId/rooms/:roomId/tasks/:id/edit", (req, res, next) => {
-    const taskId = req.params.id;
-    Task 
-        .findById(taskId)
-        .then((taskFromDB) => {res.render("tasks-newedit", taskFromDB)})
-        .catch((error) => next(error))
-})
+  const taskId = req.params.id;
+  Task.findById(taskId)
+    .then((taskFromDB) => {
+      res.render("tasks-newedit", taskFromDB);
+    })
+    .catch((error) => next(error));
+});
 
-router.post("/:projectId/rooms/:roomId/tasks/:id/edit", (req,res,next) => {
-    const taskId = req.params.id;
-    const taskInfo = {
-        category : req.body.category,
-        procedure : req.body.procedure,
-        position : req.body.position,
-        remarks : req.body.remarks,
-        /*details: [{
+router.post("/:projectId/rooms/:roomId/tasks/:id/edit", (req, res, next) => {
+  const taskId = req.params.id;
+  const taskInfo = {
+    category: req.body.category,
+    procedure: req.body.procedure,
+    position: req.body.position,
+    remarks: req.body.remarks,
+    /*details: [{
             material: req.body.material,
             materialCost: req.body.materialCost,
             done: Boolean,
@@ -63,19 +72,18 @@ router.post("/:projectId/rooms/:roomId/tasks/:id/edit", (req,res,next) => {
         workerHourlyPrice: Number,
         hoursSpent : Number
     }],*/
-    startDate : req.body.startDate,
+    startDate: req.body.startDate,
     /*startAfter : req.body.startAfter,*/
     finishDate: req.body.finishDate,
-    }
-    Task
-        .findByIdAndUpdate(taskId, taskInfo, {new:true})
-        .then((taskFromDB) => {
-            console.log(taskFromDB)
-            res.redirect(`/projects/${taskFromDB.projectId}/rooms/${taskFromDB.roomId}`)
-        })
-        .catch((error) => next(error))
-})
+  };
+  Task.findByIdAndUpdate(taskId, taskInfo, { new: true })
+    .then((taskFromDB) => {
+      console.log(taskFromDB);
+      res.redirect(
+        `/projects/${taskFromDB.projectId}/rooms/${taskFromDB.roomId}`
+      );
+    })
+    .catch((error) => next(error));
+});
 
-
-
-module.exports = router
+module.exports = router;

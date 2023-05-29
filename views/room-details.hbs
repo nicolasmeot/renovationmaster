@@ -2,13 +2,13 @@
 
 <div id="roomDetails">
     <div class="roomHeading">
-        <div class="projectRoomName">{{roomName}}</div>
-        <a class="backLink" href=""><img class="backLinkIcon" src="/images/backLink.svg" alt="">Back to project</a>
+        <div class="projectRoomName">{{roomFromDB.roomName}}</div>
+        <a class="backLink" href="/projects/{{roomFromDB.projectId}}"><img class="backLinkIcon" src="/images/backLink.svg" alt="">Back to project</a>
     
     </div>
         
     <h2 class="roomCartDescription">Description</h2>
-    <p class="roomCartDescriptionDetails">{{roomDescription}}</p>
+    <p class="roomCartDescriptionDetails">{{roomFromDB.roomDescription}}</p>
     <form id="roomDescriptionForm" action="" method="post"> 
         <label id="roomDescriptionLabel" class="formLabel">
             <input id="roomDescriptionInput" class="formInput" type="text" name="roomDescription"/>
@@ -16,7 +16,7 @@
 
         <div class="roomCartEFDateContainer">
             <label class="roomCartEFDateLabel">Estimated finish date :</label>
-                <span class="roomCartEFDate">{{finishDate}}</span>
+                <span class="roomCartEFDate">{{roomFromDB.finishDate}}</span>
                 <input id="roomCartEFDateInput" class="formInput" type="text" name="roomCartEFDate"/>
             </label>
         </div>
@@ -51,7 +51,7 @@
     <div class="roomCartTaskContainer">
         <div class="roomCartTaskCategory">
             
-                {{#each tasks}}
+                {{#each roomFromDB.tasks}}
                 {{this.type}}
                 {{/each}}
             
@@ -65,13 +65,13 @@
         <h2 class="sectionHead">Origin photo</h2>
         <div class="roomPhotoContainer">
             <ul>
-                {{#each this.roomInitialPictures}}
-                <li class="roomPhoto">{{roomInitialPictures}}</li>
+                {{#each roomFromDB.roomInitialPictures}}
+                <li class="roomPhoto">{{this}}</li>
                 {{/each}}
             </div>
 
              <div class="addRoomPhoto">
-                <form action="/projects/{{projectId}}/rooms/{{_id}}/photos" method="post" enctype="multipart/form-data" class="addRoomImg"> 
+                <form action="/projects/{{roomFromDB.projectId}}/rooms/{{roomFromDB._id}}/photos" method="post" enctype="multipart/form-data" class="addRoomImg"> 
                     <label> <img class="addPhotoIcon" src="../images/addPhoto.svg" alt="addPhoto">
                         <input type="file" name="avatar"/>
                         <input type="file" name="roomImg" class="addRoomImgWindow" multiple/>
@@ -95,8 +95,8 @@
         <h2 class="sectionHead">Current photo</h2>
         <div class="roomPhotoContainer">
             <ul>
-                {{#each this.roomInitialPictures}}
-                <li class="roomPhoto">{{roomInitialPictures}}</li>
+                {{#each roomFromDB.roomInitialPictures}}
+                <li class="roomPhoto">{{this}}</li>
                 {{/each}}
                 
                 <li class="roomPhoto"></li>
@@ -111,8 +111,8 @@
         <h2 class="sectionHead">3D rendering</h2>
         <div class="roomPhotoContainer">
             <ul>
-                {{#each this.roomInitialPictures}}
-                <li class="roomPhoto">{{roomInitialPictures}}</li>
+                {{#each roomFromDB.roomInitialPictures}}
+                <li class="roomPhoto">{{this}}</li>
                 {{/each}}
                 
                 <li class="roomPhoto"></li>
@@ -127,7 +127,7 @@
         <h2 class="sectionHead">Task details</h2>
         <div id="taskContainer" class="sectionContainer">
             
-            <form id="createTask" action="/projects/{{projectId}}/rooms/{{_id}}/tasks" method="post"> 
+            <form id="createTask" action="/projects/{{roomFromDB.projectId}}/rooms/{{roomFromDB._id}}/tasks" method="post"> 
                 
                 <button id="createTaskBtn" class="roundGradientBtn" type="submit">Create Task</button>
                 <p>{{#if errorMessage}}
