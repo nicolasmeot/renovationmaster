@@ -15,8 +15,8 @@ function iconClick(element) {
   element.classList.add("active");
 }
 
-const uploadPlanForm = document.querySelector(".floorPlanForm");
-const uploadPlanWindow = document.querySelector(".floorPlanWindow");
+const uploadPlanForm = document.querySelector(".addPhotoForm");
+const uploadPlanWindow = document.querySelector(".addPhotoWindow");
 
 if (uploadPlanWindow) {
   uploadPlanWindow.addEventListener("change", () => {
