@@ -17,7 +17,16 @@
             </div>
 
              <div class="addRoomPhoto">
-                <img class="addPhotoIcon" src="/images/addPhoto.svg" alt="addPhoto">
+                <form action="/projects/{{projectId}}/rooms/{{_id}}/photos" method="post" enctype="multipart/form-data" class="addRoomImg"> 
+                    <label> <img class="addPhotoIcon" src="../images/addPhoto.svg" alt="addPhoto">
+                        <input type="file" name="avatar"/>
+                        <input type="file" name="roomImg" class="addRoomImgWindow" multiple/>
+                    </label>
+                    
+                    <p>{{#if errorMessage}}
+                        {{errorMessage}}
+                        {{/if}}</p>
+                </form>
             </div>
         </div>
     </div>

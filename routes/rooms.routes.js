@@ -12,6 +12,18 @@ router.get("/:projectId/rooms/:id", (req, res, next) => {
         .catch((err) => next(err))
 })
 
+//Route to upload Room's img
+/*
+router.post('/:projectId/rooms/:id/photos', fileUploader.fields({name:"roomImg",maxCount:10}), (req, res) => {
+    const projectId = req.params.projectId;
+    req.files.roomImg.map(el => el.path)
+    const floorPlan = req.files.avatar[0].path;
+    console.log('floorPlan :',floorPlan)
+    Project.findByIdAndUpdate(projectId, {floorPlan: floorPlan}, { new: true })
+      .then(() => res.redirect(`/projects/${projectId}`))
+      .catch(error => console.log(`Error while uploading the floorPlan: ${error}`));
+  })
+*/
 
 router.post("/:projectId/rooms/:roomId/tasks", (req,res,next) => {
     const taskInfo = {

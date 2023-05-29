@@ -28,3 +28,12 @@ if (uploadPlanWindow) {
     uploadPlanForm.submit();
   });
 }
+
+const uploadRoomImgForm = document.querySelector(".addRoomImg");
+const uploadRoomImgWindow = document.querySelector(".addRoomImgWindow");
+
+if (uploadRoomImgWindow) {
+  uploadRoomImgWindow.addEventListener("change", () => {
+    uploadRoomImgForm.submit();
+  });
+}
