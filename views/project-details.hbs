@@ -125,7 +125,7 @@
               </li>
               
             
-          {{/if}}
+          {{else}}
           
           <li>
             <form action="/projects/{{projectDetails._id}}/photos" method="post" enctype="multipart/form-data" class="addPhotoForm"> 
@@ -139,6 +139,7 @@
                   {{/if}}</p>
             </form>
           </li>
+          {{/if}}
           
         </ul>
         
@@ -148,12 +149,12 @@
   
 
 <!-- Link to modify the picture once a picture has been uploaded --> 
-<form action="/projects/{{projectDetails._id}}/photos/update" method="post" enctype="multipart/form-data" class="floorPlanForm"> 
+<form action="/projects/{{projectDetails._id}}/photos/update" method="post" enctype="multipart/form-data" class="addPhotoForm"> 
     <label>
         <div id="editDeleteProject">
             <div id="editProject" class="editDeleteBtn">
                 <img class="editIcon" src="../images/edit.svg" alt="editIcon">
-                <input type="file" name="floorPlan" class="floorPlanWindow" style : "none"/>  
+                <input type="file" name="floorPlan" class="addPhotoWindow" />  
             </div>
         </div>
     </label>
