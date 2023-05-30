@@ -8,23 +8,23 @@
   <div >
     <div id="newProjectContainer">
       <form class="longForm" action="/projects/{{projectId}}/rooms/{{roomId}}/tasks/{{_id}}/edit" method="post">
-        <label class="formLabel">Category
-          <input class="formInput" type="text" name="category" required />
+        <label class="formLabel">Category*
+          <input class="formInput" type="text" name="category" value="{{category}}" required />
         </label>
-        <label class="formLabel">Procédure
-          <input class="formInput" type="text" name="procedure" required />
+        <label class="formLabel">Procédure*
+          <input class="formInput" type="text" name="procedure" value="{{procedure}}" required />
         </label>
         <label class="formLabel">Position
-          <input class="formInput" type="text" name="position" />
+          <input class="formInput" type="text" name="position" value="{{position}}" />
         </label>
         <label class="formLabel">Remarks
-          <input class="formInput" type="text" name="remarks" />
+          <input class="formInput" type="text" name="remarks" value="{{remarks}}"/>
         </label>
         <label class="formLabel">Material
-          <input class="formInput" type="text" name="material" />
+          <input class="formInput" type="text" name="material" value="{{material}}" />
         </label>
         <label class="formLabel">Worker
-          <input class="formInput" type="text" name="firstMeetingDate" />
+          <input class="formInput" type="text" name="firstMeetingDate" value="{{firstMeetingDate}}" />
         </label>
         <!--  A mettre à jour s'il reste du temps à la fin
         <label class="formLabel">Start After
@@ -36,10 +36,10 @@
         </label>
         -->
         <label class="formLabel">Start Date
-          <input class="formInput" type="date" name="startDate" />
+          <input class="formInput" type="date" name="startDate" value="{{startDate}}" />
         </label>
         <label class="formLabel">Finish Date
-          <input class="formInput" type="date" name="finishDate" />
+          <input class="formInput" type="date" name="finishDate" value="{{finishDate}}" />
         </label>
         <button class="roundGradientBtn" type="submit">Save Task</button>
         <p>{{#if errorMessage}}

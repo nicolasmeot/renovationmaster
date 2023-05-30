@@ -94,18 +94,11 @@ router.post("/:projectId/rooms", (req, res, next) => {
 
 //Route to upload the floor plan
 
-router.post(
-  "/:projectId/photos",
-  fileUploader.single("floorPlan"),
-  (req, res) => {
+router.post("/:projectId/photos", fileUploader.single("floorPlan"), (req, res) => {
     const projectId = req.params.projectId;
     const floorPlan = req.file.path;
     console.log("floorPlan :", floorPlan);
-    Project.findByIdAndUpdate(
-      projectId,
-      { floorPlan: floorPlan },
-      { new: true }
-    )
+    Project.findByIdAndUpdate( projectId, { floorPlan: floorPlan }, { new: true })
       .then(() => res.redirect(`/projects/${projectId}`))
       .catch((error) =>
         console.log(`Error while uploading the floorPlan: ${error}`)

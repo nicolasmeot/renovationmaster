@@ -6,15 +6,14 @@ const Task = require("../models/Task.model.js");
 
 const fileUploader = require('../config/cloudinary.config')
 
-router.get("/:projectId/rooms/:id", (req, res, next) => {
+router.get("/:projectId/rooms/:id", async (req, res, next) => {
   const roomId = req.params.id;
-  Room.findById(roomId)
-    .then((roomFromDB) =>
-      res.render("room-details", {
-        roomFromDB,
-      })
-    )
-    .catch((err) => next(err));
+  try {
+    roomFromDB = await Room.findById(roomId)
+    taskDetails = await Task.find({ roomId: roomId });
+    res.render("room-details", { taskDetails, roomFromDB });
+  } 
+  catch (error) {console.log("an error happened", error)}
 });
 
 //Route to upload Room's img
