@@ -19,16 +19,39 @@ router.get("/:projectId/rooms/:id", (req, res, next) => {
 
 //Route to upload Room's img
 
-router.post('/:projectId/rooms/:id/photos', fileUploader.fields({name:"roomImg",maxCount:10}), (req, res) => {
+router.post('/:projectId/rooms/:id/photos', fileUploader.fields([{name:"roomImg",maxCount:10}]), (req, res) => {
     const photoToUpdate = req.query.field;
     const projectId = req.params.projectId
     const roomId = req.params.id
     const updatedPhotos = req.files.roomImg.map(el => el.path)
     console.log('updatedPhotos:',updatedPhotos, "Photo to Update",photoToUpdate)
-    Room.findByIdAndUpdate(roomId,{$push: {photoToUpdate: updatedPhotos}}, { new: true })
-      .then(() =>   res.redirect(`/projects/${projectId}/rooms${_id}`))
-      .catch(error => console.log(`Error while uploading the floorPlan: ${error}`));
-  })
+    switch(photoToUpdate){
+        case "roomInitialPictures": 
+            Room.findByIdAndUpdate(roomId,{$push: {roomInitialPictures: updatedPhotos}}, { new: true })
+            .then((roomFromDB) =>   {
+            console.log("RoomFromDB", roomFromDB)
+            res.redirect(`/projects/${projectId}/rooms/${roomId}`)
+            })
+            .catch(error => console.log(`Error while uploading the floorPlan: ${error}`));
+        break;
+        case "threeDRendering":
+            Room.findByIdAndUpdate(roomId,{$push: {threeDRendering: updatedPhotos}}, { new: true })
+            .then((roomFromDB) =>   {
+            console.log("RoomFromDB", roomFromDB)
+            res.redirect(`/projects/${projectId}/rooms/${roomId}`)
+            })
+            .catch(error => console.log(`Error while uploading the floorPlan: ${error}`));
+        break;
+        case "currentPictures":
+            Room.findByIdAndUpdate(roomId,{$push: {currentPictures: updatedPhotos}}, { new: true })
+            .then((roomFromDB) =>   {
+            console.log("RoomFromDB", roomFromDB)
+            res.redirect(`/projects/${projectId}/rooms/${roomId}`)
+            })
+            .catch(error => console.log(`Error while uploading the floorPlan: ${error}`));
+        break;
+    }
+})
 
 
 router.post("/:projectId/rooms/:roomId/tasks", (req, res, next) => {

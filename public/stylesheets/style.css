@@ -1292,6 +1292,10 @@ form {
   flex: none;
 }
 
+.roomPhotoContainer img {
+  height:100%
+}
+
 .addRoomPhoto {
   position: relative;
   max-width: 40vw;
