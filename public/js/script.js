@@ -15,6 +15,7 @@ function iconClick(element) {
   element.classList.add("active");
 }
 
+/* JS to listen to input change for an automatic upload of Floor plan */
 const uploadPlanForm = document.querySelector(".addPhotoForm");
 const uploadPlanWindow = document.querySelector(".addPhotoWindow");
 
@@ -24,6 +25,7 @@ if (uploadPlanWindow) {
   });
 }
 
+/* JS to listen to input change for an automatic upload of Room Img */
 const uploadRoomImgForm = document.querySelector(".addRoomImg");
 const uploadRoomImgWindow = document.querySelector(".addRoomImgWindow");
 

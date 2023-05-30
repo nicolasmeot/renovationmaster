@@ -4,6 +4,8 @@ const Project = require("../models/Project.model.js");
 const Room = require("../models/Room.model.js");
 const Task = require("../models/Task.model.js");
 
+const fileUploader = require('../config/cloudinary.config')
+
 router.get("/:projectId/rooms/:id", (req, res, next) => {
   const roomId = req.params.id;
   Room.findById(roomId)
@@ -16,17 +18,18 @@ router.get("/:projectId/rooms/:id", (req, res, next) => {
 });
 
 //Route to upload Room's img
-/*
+
 router.post('/:projectId/rooms/:id/photos', fileUploader.fields({name:"roomImg",maxCount:10}), (req, res) => {
-    const projectId = req.params.projectId;
-    req.files.roomImg.map(el => el.path)
-    const floorPlan = req.files.avatar[0].path;
-    console.log('floorPlan :',floorPlan)
-    Project.findByIdAndUpdate(projectId, {floorPlan: floorPlan}, { new: true })
-      .then(() => res.redirect(`/projects/${projectId}`))
+    const photoToUpdate = req.query.field;
+    const projectId = req.params.projectId
+    const roomId = req.params.id
+    const updatedPhotos = req.files.roomImg.map(el => el.path)
+    console.log('updatedPhotos:',updatedPhotos, "Photo to Update",photoToUpdate)
+    Room.findByIdAndUpdate(roomId,{$push: {photoToUpdate: updatedPhotos}}, { new: true })
+      .then(() =>   res.redirect(`/projects/${projectId}/rooms${_id}`))
       .catch(error => console.log(`Error while uploading the floorPlan: ${error}`));
   })
-*/
+
 
 router.post("/:projectId/rooms/:roomId/tasks", (req, res, next) => {
   const taskInfo = {
