@@ -71,7 +71,7 @@
             </div>
 
              <div class="addRoomPhoto">
-                <form action="/projects/{{roomFromDB.projectId}}/rooms/{{roomFromDB._id}}/photos" method="post" enctype="multipart/form-data" class="addRoomImg"> 
+                <form action="/projects/{{roomFromDB.projectId}}/rooms/{{roomFromDB._id}}/photos?field=roomInitialPictures" method="post" enctype="multipart/form-data" class="addRoomImg"> 
                     <label> <img class="addPhotoIcon" src="../images/addPhoto.svg" alt="addPhoto">
                         <input type="file" name="avatar"/>
                         <input type="file" name="roomImg" class="addRoomImgWindow" multiple/>
@@ -95,10 +95,23 @@
         <h2 class="sectionHead">Current photo</h2>
         <div class="roomPhotoContainer">
             <ul>
-                {{#each roomFromDB.roomInitialPictures}}
+                {{#each roomFromDB.currentPictures}}
                 <li class="roomPhoto">{{this}}</li>
                 {{/each}}
                 
+                <div class="addRoomPhoto">
+                    <form action="/projects/{{roomFromDB.projectId}}/rooms/{{roomFromDB._id}}/photos?field=currentPictures" method="post" enctype="multipart/form-data" class="addRoomImg"> 
+                        <label> <img class="addPhotoIcon" src="../images/addPhoto.svg" alt="addPhoto">
+                            <input type="file" name="avatar"/>
+                            <input type="file" name="roomImg" class="addRoomImgWindow" multiple/>
+                        </label>
+                        
+                        <p>{{#if errorMessage}}
+                            {{errorMessage}}
+                            {{/if}}</p>
+                    </form>
+                </div>
+
                 <li class="roomPhoto"></li>
                 <li class="roomPhoto"></li>
                 
@@ -111,10 +124,23 @@
         <h2 class="sectionHead">3D rendering</h2>
         <div class="roomPhotoContainer">
             <ul>
-                {{#each roomFromDB.roomInitialPictures}}
+                {{#each roomFromDB.threeDRendering}}
                 <li class="roomPhoto">{{this}}</li>
                 {{/each}}
                 
+                <div class="addRoomPhoto">
+                    <form action="/projects/{{roomFromDB.projectId}}/rooms/{{roomFromDB._id}}/photos?field=threeDRendering" method="post" enctype="multipart/form-data" class="addRoomImg"> 
+                        <label> <img class="addPhotoIcon" src="../images/addPhoto.svg" alt="addPhoto">
+                            <input type="file" name="avatar"/>
+                            <input type="file" name="roomImg" class="addRoomImgWindow"/>
+                        </label>
+                        
+                        <p>{{#if errorMessage}}
+                            {{errorMessage}}
+                            {{/if}}</p>
+                    </form>
+                </div>
+
                 <li class="roomPhoto"></li>
                 <li class="roomPhoto"></li>
                 
