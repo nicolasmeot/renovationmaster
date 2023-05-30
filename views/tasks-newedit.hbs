@@ -21,10 +21,19 @@
           <input class="formInput" type="text" name="remarks" value="{{remarks}}"/>
         </label>
         <label class="formLabel">Material
-          <input class="formInput" type="text" name="material" value="{{material}}" />
+          <input class="formInput" type="text" name="material" value="{{materials.material}}" />
         </label>
-        <label class="formLabel">Worker
-          <input class="formInput" type="text" name="firstMeetingDate" value="{{firstMeetingDate}}" />
+        <label class="formLabel">Material's cost 
+          <input class="formInput" type="text" name="materialCost" value="{{materials.materialCost}}" />
+        </label>
+        <label class="formLabel">Worker's Name
+          <input class="formInput" type="text" name="workerName" value="{{workers.name}}" />
+        </label>
+        <label class="formLabel">Worker's hourly Price
+          <input class="formInput" type="text" name="workerPrice" value="{{workers.workerHourlyPrice}}" />
+        </label>
+        <label class="formLabel">Worker's time spent
+          <input class="formInput" type="text" name="workerTime" value="{{workers.hoursSpent}}" />
         </label>
         <!--  A mettre à jour s'il reste du temps à la fin
         <label class="formLabel">Start After

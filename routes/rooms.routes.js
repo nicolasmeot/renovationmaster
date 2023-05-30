@@ -87,16 +87,15 @@ router.post("/:projectId/rooms/:roomId/tasks/:id/edit", (req, res, next) => {
     procedure: req.body.procedure,
     position: req.body.position,
     remarks: req.body.remarks,
-    /*details: [{
+    materials: [{
             material: req.body.material,
             materialCost: req.body.materialCost,
-            done: Boolean,
     }],
     workers: [{
-        workerName: String,
-        workerHourlyPrice: Number,
-        hoursSpent : Number
-    }],*/
+        workerName: req.body.workerName,
+        workerHourlyPrice: req.body.workerPrice,
+        hoursSpent : req.body.workerTime,
+    }],
     startDate: req.body.startDate,
     /*startAfter : req.body.startAfter,*/
     finishDate: req.body.finishDate,
