@@ -1108,6 +1108,11 @@ form {
   background: #f3f3f4;
 }
 
+.roomCartPhoto img{
+  width:100%
+}
+
+
 .photoArrow {
   width: 10vw;
 }
