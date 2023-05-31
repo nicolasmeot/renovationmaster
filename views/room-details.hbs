@@ -68,12 +68,12 @@
                 {{#each roomFromDB.roomInitialPictures}}
                 <li class="roomPhoto"><img src={{this}} alt="Initial pictures"/></li>
                 {{/each}}
-            </div>
+            
 
             <!--Formulaire d'upload des initial pictures. Ne pas changer l'attribut class sinon modif à faire aussi dans le public/js/script.js-->
              <div class="addRoomPhoto">
                 <form action="/projects/{{roomFromDB.projectId}}/rooms/{{roomFromDB._id}}/photos?field=roomInitialPictures" method="post" enctype="multipart/form-data" class="addRoomImgInit"> 
-                    <label> <img class="addPhotoIcon" src="../images/addPhoto.svg" alt="addPhoto">
+                    <label> <img class="addPhotoIcon" src="/images/addPhoto.svg" alt="addPhoto">
                         <input type="file" name="roomImg" class="addRoomImgWindowInit" multiple="multiple"/>
                     </label>
                     
@@ -102,7 +102,7 @@
                 <!--Formulaire d'upload des current pictures. Ne pas changer l'attribut class sinon modif à faire aussi dans le public/js/script.js-->
                 <div class="addRoomPhoto">
                     <form action="/projects/{{roomFromDB.projectId}}/rooms/{{roomFromDB._id}}/photos?field=currentPictures" method="post" enctype="multipart/form-data" class="addRoomImgCurr"> 
-                        <label> <img class="addPhotoIcon" src="../images/addPhoto.svg" alt="addPhoto">
+                        <label> <img class="addPhotoIcon" src="/images/addPhoto.svg" alt="addPhoto">
                             <input type="file" name="roomImg" class="addRoomImgWindowCurr" multiple="multiple"/>
                         </label>
                         
@@ -131,7 +131,7 @@
                 <!--Formulaire d'upload des 3D pictures. Ne pas changer l'attribut class sinon modif à faire aussi dans le public/js/script.js-->
                 <div class="addRoomPhoto">
                     <form action="/projects/{{roomFromDB.projectId}}/rooms/{{roomFromDB._id}}/photos?field=threeDRendering" method="post" enctype="multipart/form-data" class="addRoomImg3d"> 
-                        <label> <img class="addPhotoIcon" src="../images/addPhoto.svg" alt="addPhoto">
+                        <label> <img class="addPhotoIcon" src="/images/addPhoto.svg" alt="addPhoto">
                             <input type="file" name="roomImg" class="addRoomImgWindow3d" multiple="multiple"/>
                         </label>
                         

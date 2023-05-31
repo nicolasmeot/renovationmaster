@@ -991,6 +991,7 @@ form {
   flex-direction: column;
   align-items: center;
   padding: 1.5vh 2.5vw;
+  list-style: none;
 }
 
 .sectionHead {
@@ -1066,8 +1067,8 @@ form {
 
 .photo {
   position: relative;
-  height: 90%;
-
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   object-position: center;
 
@@ -1092,13 +1093,6 @@ form {
 
 .addPhotoInput {
   display: none;
-}
-
-.deletePhoto {
-  position: absolute;
-  bottom: 5%;
-  right: 5%;
-  padding: 5%;
 }
 
 .roomLink {
@@ -1196,10 +1190,9 @@ form {
   background: #f3f3f4;
 }
 
-.roomCartPhoto img{
-  width:100%
+.roomCartPhoto img {
+  height: 100%;
 }
-
 
 .photoArrow {
   width: 10vw;
@@ -1353,7 +1346,7 @@ form {
 
 .roomPhotoContainer {
   width: 92vw;
-  height: 20vh;
+  height: 15vh;
   display: flex;
 
   justify-content: space-between;
@@ -1387,16 +1380,26 @@ form {
 
 .roomPhotoContainer li {
   position: relative;
-  display: flex;
-  align-items: center;
   max-width: 50%;
-  height: 18vh;
+  height: 13vh;
   margin: auto;
 
   border: 0px solid;
   scroll-snap-align: start;
 
   flex: none;
+}
+
+.roomPhotoContainer img {
+  height: 100%;
+}
+
+.roomPhotoContainer .deletePhoto > img {
+  height: 3vh;
+  position: absolute;
+  bottom: 0;
+  right: 3%;
+  margin: 3%;
 }
 
 .addRoomPhoto {
@@ -1410,6 +1413,21 @@ form {
   background: #fbfbfc;
   border: 1px dashed #c593fc;
   border-radius: 2px;
+}
+
+.addRoomPhoto form {
+  display: flex;
+  flex-direction: row;
+}
+
+.addRoomPhoto form label {
+  display: flex;
+  width: 76px;
+  padding: 0 30vw;
+}
+
+.addRoomPhoto form label input {
+  visibility: hidden;
 }
 
 .sectionHeadLarge {
