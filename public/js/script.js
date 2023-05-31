@@ -34,3 +34,18 @@ if (uploadRoomImgWindow) {
     uploadRoomImgForm.submit();
   });
 }
+
+document.querySelectorAll(".dropdown-el").forEach(function (dropdown) {
+  dropdown.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    dropdown.classList.toggle("expanded");
+    document.getElementById(e.target.getAttribute("for")).checked = true;
+  });
+});
+
+document.addEventListener("click", function () {
+  document.querySelectorAll(".dropdown-el").forEach(function (dropdown) {
+    dropdown.classList.remove("expanded");
+  });
+});
