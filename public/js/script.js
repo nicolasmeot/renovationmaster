@@ -25,13 +25,33 @@ if (uploadPlanWindow) {
   });
 }
 
-/* JS to listen to input change for an automatic upload of Room Img */
-const uploadRoomImgForm = document.querySelector(".addRoomImg");
-const uploadRoomImgWindow = document.querySelector(".addRoomImgWindow");
+/* JS to listen to input change for an automatic upload of initial Room Img */
+const uploadRoomImgFormInit = document.querySelector(".addRoomImgInit");
+const uploadRoomImgWindowInit = document.querySelector(".addRoomImgWindowInit");
 
-if (uploadRoomImgWindow) {
-  uploadRoomImgWindow.addEventListener("change", () => {
-    uploadRoomImgForm.submit();
+if (uploadRoomImgWindowInit) {
+  uploadRoomImgWindowInit.addEventListener("change", () => {
+    uploadRoomImgFormInit.submit();
+  });
+}
+
+/* JS to listen to input change for an automatic upload of initial Room Img */
+const uploadRoomImgFormCurr = document.querySelector(".addRoomImgCurr");
+const uploadRoomImgWindowCurr = document.querySelector(".addRoomImgWindowCurr");
+
+if (uploadRoomImgWindowCurr) {
+  uploadRoomImgWindowCurr.addEventListener("change", () => {
+    uploadRoomImgFormCurr.submit();
+  });
+}
+
+/* JS to listen to input change for an automatic upload of initial Room Img */
+const uploadRoomImgForm3d = document.querySelector(".addRoomImg3d");
+const uploadRoomImgWindow3d = document.querySelector(".addRoomImgWindow3d");
+
+if (uploadRoomImgWindow3d) {
+  uploadRoomImgWindow3d.addEventListener("change", () => {
+    uploadRoomImgForm3d.submit();
   });
 }
 
