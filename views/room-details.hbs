@@ -66,7 +66,8 @@
         <div class="roomPhotoContainer">
             <ul>
                 {{#each roomFromDB.roomInitialPictures}}
-                <li class="roomPhoto"><img src={{this}} alt="Initial pictures"/></li>
+                <li class="roomPhoto"><img src={{this}} alt="Initial pictures"/>
+                <a class="deletePhoto" href="/projects/{{../roomFromDB.projectId}}/rooms/{{../roomFromDB._id}}/photos/del/roomInitialPictures/{{@index}}"><img src="/images/deleteGray.svg" alt=""></a></li>
                 {{/each}}
             
 
