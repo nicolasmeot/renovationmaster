@@ -13,6 +13,7 @@ const projectSchema = new Schema({
     projectDescription : String,
     projectDeadline : Date,
     floorPlan : String,
+    mainPicture : String,
     Rooms : [{type: Schema.Types.ObjectId, ref: "Room"}],
 
 });

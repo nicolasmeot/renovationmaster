@@ -57,7 +57,16 @@ router.post(
         )
           .then((roomFromDB) => {
             console.log("RoomFromDB", roomFromDB);
-            res.redirect(`/projects/${projectId}/rooms/${roomId}`);
+            //test code pour upload la main image
+            Project.findByIdAndUpdate(
+              projectId,
+              { mainPicture: roomFromDB.threeDRendering[0] },
+              { new: true }
+            )
+              .then(() =>
+                res.redirect(`/projects/${projectId}/rooms/${roomId}`)
+              )
+              .catch((error) => console.log("stg happened", error));
           })
           .catch((error) =>
             console.log(`Error while uploading the floorPlan: ${error}`)

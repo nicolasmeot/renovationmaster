@@ -586,6 +586,11 @@ form {
   align-items: center;
 }
 
+.editDeleteBtn2 {
+  display: flex;
+  align-items: center;
+}
+
 .editIcon {
   width: 24px;
   height: 24px;
@@ -595,6 +600,11 @@ form {
 
 .deleteLink {
   color: #fc1d20;
+}
+
+.hiddenDeleteBtn {
+  color: #fc1d20;
+  display: none;
 }
 
 .deleteIcon {
@@ -792,6 +802,10 @@ form {
   height: 45%;
 
   background: #d9d9d9;
+}
+
+.projectCardPhoto img {
+  height: 100%;
 }
 
 .projectCardProgressBar {
@@ -1158,7 +1172,7 @@ form {
   width: fit-content;
   padding: 2% 6% 2% 3%;
   margin-right: auto;
-  border-radius: 10px 10px 50px 10px;
+  border-radius: 10px 0px 50px 0px;
   background: #4e139f;
 
   font-family: "DM Sans";
