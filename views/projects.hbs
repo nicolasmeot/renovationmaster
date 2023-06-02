@@ -1,14 +1,13 @@
 <div class="display">
     {{>nav}}
 
-    <span class="dropdown-el">
-        <input type="radio" name="sortType" value="Relevance" checked="checked" id="sort-relevance"><label for="sort-relevance">Relevance</label>
-        <input type="radio" name="sortType" value="Popularity" id="sort-best"><label for="sort-best">Product Popularity</label>
-        <input type="radio" name="sortType" value="PriceIncreasing" id="sort-low"><label for="sort-low">Price Low to High</label>
-        <input type="radio" name="sortType" value="PriceDecreasing" id="sort-high"><label for="sort-high">Price High to Low</label>
-        <input type="radio" name="sortType" value="ProductBrand" id="sort-brand"><label for="sort-brand">Product Brand</label>
-        <input type="radio" name="sortType" value="ProductName" id="sort-name"><label for="sort-name">Product Name</label>
-    </span>
+    {{!-- <span class="dropdown-el">
+        <input type="radio" name="sortType" value="Relevance" checked="checked" id="sort-clientNamAZ"><label for="sort-clientNameAZ">Client name A-Z</label>
+        <input type="radio" name="sortType" value="Popularity" id="sort-clientNamZA"><label for="sort-clientNamZA">Client name Z-A</label>
+        <input type="radio" name="sortType" value="PriceIncreasing" id="sort-projectDeadline"><label for="sort-projectDeadline">Project deadline</label>
+        <input type="radio" name="sortType" value="PriceDecreasing" id="sort-projectProgress"><label for="sort-projectProgress">Project progress</label>
+        
+    </span> --}}
 
     <h1 class="sectionHeadLarge">Hello, this is the page with all of your projects</h1>
 
@@ -22,7 +21,7 @@
     </div>
     
 
-    <a href="/projects/new"><img id="addProject" src="../images/addGradient.svg" alt="addProject"></a>
+    <a id="addProjectLink" href="/projects/new"><img id="addProject" src="../images/addGradient.svg" alt="addProject"></a>
 
     
 

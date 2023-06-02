@@ -78,7 +78,7 @@ function attachFormEventListener() {
     forms[i].addEventListener("submit", function (event) {
       // Cette ligne event.preventDefault() est juste pour test de dom pour voir si ca marche ou pas
       // A supprimer une fois qu'on puisse inserer les donness du server
-      event.preventDefault();
+      // event.preventDefault();
 
       let inputtedText =
         document.getElementsByClassName("attachFormInput")[i].value;
