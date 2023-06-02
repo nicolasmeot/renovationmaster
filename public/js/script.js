@@ -127,16 +127,19 @@ for (let i = 0; i < editItem.length; i++) {
 //JS to decide if we really want to delete a project or not
 
 const deleteProj = document.getElementById("editDeleteProject")
-deleteProj.addEventListener("click", function(){
-  document.getElementById("deleteProject").setAttribute('class','visible')
-} )
-
 const deleteProjYes = document.getElementById("doIt")
-deleteProjYes.addEventListener("click", function(){
-  deleteProjYes.submit()
-} )
 const deleteProjNo = document.getElementById("dont")
-deleteProjNo.addEventListener("click", function(){
-  document.getElementById("deleteProject").setAttribute('class','hidden')
-} )
 
+if(deleteProj){
+  deleteProj.addEventListener("click", function(){
+    document.getElementById("deleteProject").setAttribute('class','visible')
+  } )
+
+  deleteProjYes.addEventListener("click", function(){
+    deleteProjYes.submit()
+  } )
+
+  deleteProjNo.addEventListener("click", function(){
+    document.getElementById("deleteProject").setAttribute('class','hidden')
+  } )
+}
