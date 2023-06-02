@@ -1,6 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const roomSchema = new Schema({
+    userId:String,
     projectId:String,
     roomName: String,
     roomDescription: String,
