@@ -7,7 +7,7 @@ a {
   font-family: "Lato";
   font-style: normal;
   font-weight: 700;
-  font-size: 1em;
+  font-size: calc(1vw + 0.8em);
   text-decoration: none;
 
   color: #2081e4;
@@ -58,7 +58,7 @@ form {
   font-family: "DM Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 2em;
+  font-size: calc(1vw + 2em);
   padding: 0;
 
   color: #17b35f;
@@ -68,7 +68,7 @@ form {
   font-family: "DM Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 2em;
+  font-size: calc(1vw + 2em);
   padding: 0;
 
   color: #7a24f7;
@@ -77,7 +77,7 @@ form {
 #indexSlogan {
   font-family: "Lato";
   font-style: normal;
-  font-size: 1em;
+  font-size: calc(1vw + 0.8em);
   font-weight: 300;
 
   color: #2081e4;
@@ -108,8 +108,8 @@ form {
   font-family: "Lato";
   font-style: normal;
   font-weight: 300;
-  font-size: 1.5em;
-  line-height: 1em;
+  font-size: calc(1vw + 1.5em);
+  line-height: 0.8em;
 
   color: #5f5e63;
 }
@@ -130,7 +130,7 @@ form {
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
-  font-size: 1em;
+  font-size: calc(1vw + 0.8em);
 
   background-color: #ffffff;
   border: 1px solid #7a24f7;
@@ -153,7 +153,7 @@ form {
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
-  font-size: 1em;
+  font-size: calc(1vw + 0.8em);
 
   background: linear-gradient(
     96.68deg,
@@ -215,7 +215,7 @@ form {
   font-family: "DM Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: calc(1vw + 1.5em);
   padding: 0;
 
   color: #17b35f;
@@ -225,7 +225,7 @@ form {
   font-family: "DM Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: calc(1vw + 1.5em);
   padding: 0;
 
   color: #7a24f7;
@@ -242,7 +242,7 @@ form {
   font-family: "Lato";
   font-style: normal;
   font-weight: 700;
-  font-size: 1.2em;
+  font-size: calc(1vw + 1em);
   display: flex;
 
   color: #2b2a30;
@@ -252,7 +252,7 @@ form {
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
-  font-size: 1.1em;
+  font-size: calc(1vw + 0.9em);
   padding-top: 0.5vh;
 
   color: #82818f;
@@ -277,7 +277,7 @@ form {
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
-  font-size: 1em;
+  font-size: calc(1vw + 0.8em);
   display: block;
   margin-bottom: 18px;
 
@@ -458,7 +458,7 @@ form {
   font-family: "Lato", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 1.5em;
+  font-size: calc(1vw + 1.5em);
 }
 
 .menuRoom {
@@ -467,7 +467,7 @@ form {
   font-family: "Lato", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 1.2em;
+  font-size: calc(1vw + 1em);
 }
 
 #menuToggle input:checked ~ ul {
@@ -483,7 +483,7 @@ form {
   font-family: "DM Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 1em;
+  font-size: calc(1vw + 0.8em);
   padding: 0;
 
   color: #17b35f;
@@ -493,7 +493,7 @@ form {
   font-family: "DM Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 1em;
+  font-size: calc(1vw + 0.8em);
   padding: 0;
 
   color: #7a24f7;
@@ -559,7 +559,7 @@ form {
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
-  font-size: 1em;
+  font-size: calc(1vw + 0.8em);
   margin-bottom: 1vh;
 
   color: #2b2a30;
@@ -569,7 +569,7 @@ form {
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 700;
-  font-size: 0.8em;
+  font-size: calc(1vw + 0.6em);
 
   color: #82808f;
 }
@@ -605,6 +605,8 @@ form {
 .hiddenDeleteBtn {
   color: #fc1d20;
   display: none;
+  margin-left: auto;
+  margin-right: 2.5vw;
 }
 
 .deleteIcon {
@@ -635,7 +637,7 @@ form {
   min-width: 12em;
   position: relative;
   display: inline-block;
-  margin-right: 1em;
+  margin-right: 0.8em;
   min-height: 2em;
   max-height: 2em;
   overflow: hidden;
@@ -646,7 +648,7 @@ form {
   color: #444;
   outline: none;
   border: 0.06em solid transparent;
-  border-radius: 1em;
+  border-radius: 0.8em;
   background-color: #9eb8da;
   transition: 0.3s all ease-in-out;
 }
@@ -668,7 +670,7 @@ form {
   display: block;
   height: 2em;
   line-height: 2em;
-  padding-left: 1em;
+  padding-left: 0.8em;
   padding-right: 3em;
   cursor: pointer;
   position: relative;
@@ -691,8 +693,8 @@ form {
 .dropdown-el::after {
   content: "";
   position: absolute;
-  right: 0.8em;
-  top: 0.9em;
+  right: 0.6em;
+  top: 0.7em;
   border: 0.3em solid #3694d7;
   border-color: #3694d7 transparent transparent transparent;
   transition: 0.4s all ease-in-out;
@@ -749,7 +751,7 @@ form {
 .projectCard {
   position: relative;
   width: 40vw;
-  height: 17vh;
+  aspect-ratio: 1 / 1;
 
   background: #ffffff;
   border-radius: 10px;
@@ -776,7 +778,7 @@ form {
   font-family: "Lato";
   font-style: normal;
   font-weight: 500;
-  font-size: 1em;
+  font-size: calc(1vw + 0.8em);
   padding: 5px;
 
   color: #2b2a30;
@@ -786,7 +788,7 @@ form {
   font-family: "Lato";
   font-style: normal;
   font-weight: 300;
-  font-size: 0.8em;
+  font-size: calc(1vw + 0.6em);
 
   color: #161518;
 }
@@ -877,7 +879,7 @@ form {
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 400;
-  font-size: 1.2em;
+  font-size: calc(1vw + 1em);
   margin-top: auto;
 
   color: #2b2a30;
@@ -891,7 +893,7 @@ form {
   font-family: "Lato";
   font-style: normal;
   font-weight: 300;
-  font-size: 1em;
+  font-size: calc(1vw + 0.8em);
 
   color: #151417;
 }
@@ -906,7 +908,7 @@ form {
   font-family: "Lato";
   font-style: italic;
   font-weight: 300;
-  font-size: 1em;
+  font-size: calc(1vw + 0.8em);
 
   color: #151417;
 }
@@ -915,7 +917,7 @@ form {
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
-  font-size: 1em;
+  font-size: calc(1vw + 0.8em);
 
   color: #151417;
 }
@@ -948,7 +950,7 @@ form {
   font-family: "Lato";
   font-style: italic;
   font-weight: 300;
-  font-size: 1em;
+  font-size: calc(1vw + 0.8em);
 
   color: #151417;
 }
@@ -959,17 +961,25 @@ form {
 }
 
 .statusInfo {
+  width: 98vw;
   text-align: center;
   display: flex;
   justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.statusInfo > div {
+  display: flex;
+  justify-content: center;
 }
 
 .status {
-  width: 48px;
+  max-width: 10vw;
   font-family: "Lato";
   font-style: normal;
   font-weight: 300;
-  font-size: 0.8em;
+  font-size: calc(1vw + 0.6em);
   margin: 0 4vw;
   padding: 0;
 
@@ -1007,8 +1017,8 @@ form {
 
 .iconLine {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: calc(20px + 2vw);
+  aspect-ratio: 1 / 1;
   padding: 5px;
   background-color: #a293fc;
   border-radius: 50%;
@@ -1031,7 +1041,7 @@ form {
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 700;
-  font-size: 1em;
+  font-size: calc(1vw + 0.8em);
   padding-top: 1.5vh;
 
   color: #2b2a30;
@@ -1051,7 +1061,7 @@ form {
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
-  font-size: 0.9em;
+  font-size: calc(1vw + 0.7em);
 
   color: #161518;
 }
@@ -1134,7 +1144,7 @@ form {
   font-family: "Lato";
   font-style: normal;
   font-weight: 700;
-  font-size: 1.1em;
+  font-size: calc(1vw + 0.9em);
   margin-bottom: 3%;
   margin-left: auto;
 
@@ -1197,7 +1207,7 @@ form {
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 700;
-  font-size: 1em;
+  font-size: calc(1vw + 0.8em);
 
   color: #ffffff;
 }
@@ -1235,7 +1245,7 @@ form {
   font-family: "Lato";
   font-style: normal;
   font-weight: 500;
-  font-size: 1em;
+  font-size: calc(1vw + 0.8em);
   margin-left: 3%;
 
   color: #4e139f;
@@ -1246,7 +1256,7 @@ form {
   font-family: "lato";
   font-style: normal;
   font-weight: 400;
-  font-size: 0.8em;
+  font-size: calc(1vw + 0.6em);
 
   color: #2b2a30;
 }
@@ -1260,7 +1270,7 @@ form {
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
-  font-size: 0.9em;
+  font-size: calc(1vw + 0.7em);
   margin: auto 0 auto auto;
   text-align: end;
 
@@ -1271,7 +1281,7 @@ form {
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 700;
-  font-size: 0.9em;
+  font-size: calc(1vw + 0.7em);
   margin-right: 4%;
   text-align: end;
 
@@ -1308,7 +1318,7 @@ form {
   font-family: "lato";
   font-style: normal;
   font-weight: 400;
-  font-size: 1em;
+  font-size: calc(1vw + 0.8em);
 
   color: #7a24f7;
 }
@@ -1336,7 +1346,7 @@ form {
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 700;
-  font-size: 1em;
+  font-size: calc(1vw + 0.8em);
 
   color: #ffffff;
 }
@@ -1392,7 +1402,7 @@ form {
   font-family: "Lato";
   font-style: normal;
   font-weight: 400;
-  font-size: 0.9em;
+  font-size: calc(1vw + 0.7em);
 
   color: #161518;
 }
@@ -1467,7 +1477,7 @@ form {
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 700;
-  font-size: 1.2em;
+  font-size: calc(1vw + 1em);
   padding: 10px;
 
   color: #2b2a30;
