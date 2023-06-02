@@ -737,9 +737,12 @@ form {
   padding: 2vh 4vw;
 }
 
-#addProject {
+#addProjectLink {
   position: absolute;
   bottom: 0;
+}
+
+#addProject {
   padding: 10px;
 }
 
@@ -923,20 +926,20 @@ form {
   margin-right: 2.5vw;
 }
 
-#deleteProject{
-  height : 30vh;
-  width : 85vw;
+#deleteProject {
+  height: 30vh;
+  width: 85vw;
 }
 
-#deleteProject p{
-  padding : 1vh 2.5vw;
-  background-color: #7a24f7 ;
-  color : white;
-  border : solid black
+#deleteProject p {
+  padding: 1vh 2.5vw;
+  background-color: #7a24f7;
+  color: white;
+  border: solid black;
 }
 
-#deleteProject.hidden{
-  display : none;
+#deleteProject.hidden {
+  display: none;
 }
 
 #statusBarTitle {
