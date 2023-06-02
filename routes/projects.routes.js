@@ -59,6 +59,15 @@ router.post("/new", (req, res, next) => {
     .catch((error) => next(error));
 });
 
+//Route to delete a project
+router.post("/:id/delete", (req,res,next) => {
+  const projectId=req.params.id
+  Project.findByIdAndDelete(projectId)
+  .then(() => res.redirect("/projects"))
+  .catch(error => next(error) );
+})
+
+
 //Route to display the page with project details
 
 router.get("/:id", async (req, res, next) => {

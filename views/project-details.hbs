@@ -19,10 +19,19 @@
   <div id="editDeleteProject">
     <div id="editProject" class="editDeleteBtn">
       <img class="editIcon" src="../images/edit.svg" alt="editIcon">
-      <a class="editLink" href="#">Edit / Delete project</a>
+      <a class="editLink" href="#">Delete project</a>
     </div>
-
   </div>
+
+<div id="deleteProject" class="hidden">
+  <h3>Are you sure you want to delete this project </h3> 
+  <form action="/projects/{{projectDetails._id}}/delete" method="post" id="doIt"> 
+    <label class="deleteProject"> 
+      <p >Yes</p>
+    </label>
+  </form>
+  <p id="dont">No</p>
+</div>
 
   <p id="statusBarTitle">Select work status:</p>
   <div class="statusBarContainer">
@@ -93,6 +102,7 @@
     </div>
   </div>
 
+<!-- J'enlève la possibilité d'edit pour l'instant. Trop complicado
   <div id="editMeeting">
     <div id="editMeetingBtn" class="editDeleteBtn">
       <img class="editIcon" src="../images/edit.svg" alt="editIcon">
@@ -101,6 +111,7 @@
   </div>
 
   </div>
+-->
   
 
 

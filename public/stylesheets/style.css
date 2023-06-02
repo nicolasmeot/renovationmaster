@@ -923,6 +923,22 @@ form {
   margin-right: 2.5vw;
 }
 
+#deleteProject{
+  height : 30vh;
+  width : 85vw;
+}
+
+#deleteProject p{
+  padding : 1vh 2.5vw;
+  background-color: #7a24f7 ;
+  color : white;
+  border : solid black
+}
+
+#deleteProject.hidden{
+  display : none;
+}
+
 #statusBarTitle {
   margin-left: 4vw;
   margin-right: auto;
