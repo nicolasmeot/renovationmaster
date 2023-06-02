@@ -9,7 +9,13 @@
     <div id="newProjectContainer">
       <form class="longForm" action="/projects/{{projectId}}/rooms/{{roomId}}/tasks/{{_id}}/edit" method="post">
         <label class="formLabel">Category*
-          <input class="formInput" type="text" name="category" value="{{category}}" required />
+          <select class="formInput" type="text" name="category" value="{{category}}" required />
+            <option>Painting</option>
+            <option>Plumbing</option>
+            <option>Electricity</option>
+            <option>Flooring</option>
+            <option>Drywalling</option>
+          </select>
         </label>
         <label class="formLabel">Procédure*
           <input class="formInput" type="text" name="procedure" value="{{procedure}}" required />
