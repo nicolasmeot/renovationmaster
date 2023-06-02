@@ -6,9 +6,12 @@ const Task = require("../models/Task.model.js");
 
 const fileUploader = require("../config/cloudinary.config");
 
+let userProjects = {};
+
 router.get("/:projectId/rooms/:id", async (req, res, next) => {
   const roomId = req.params.id;
   try {
+    userProjects= await Project.find({ userId: req.session.currentUser._id })
     roomFromDB = await Room.findById(roomId);
     taskDetails = await Task.find({ roomId: roomId });
     console.log("roomFromDB=", roomFromDB);
