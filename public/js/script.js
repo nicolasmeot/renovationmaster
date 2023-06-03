@@ -84,30 +84,37 @@ for (let i = 0; i < editItem.length; i++) {
 // Editer project info
 let editProject = document.getElementById("editProjectBtn");
 let projectForm = document.getElementById("projectInfoForm");
-editProject.addEventListener("click", function (event) {
-  projectForm.style.display = "grid";
-  projectForm.style.gridTemplateColumns = "1fr 1fr 1fr";
-  projectForm.style.alignItems = "flex-end";
-  projectForm.style.height = "10vh";
-  projectForm.style.margin = "5vh 0";
-});
+if(editProject){
+  editProject.addEventListener("click", function (event) {
+    projectForm.style.display = "grid";
+    projectForm.style.gridTemplateColumns = "1fr 1fr 1fr";
+    projectForm.style.alignItems = "flex-end";
+    projectForm.style.height = "10vh";
+    projectForm.style.margin = "5vh 0";
+  });
+}
+
 
 // Editer room info
 let editRoom = document.getElementById("editRoomDescriptionBtn");
 let roomForm = document.getElementById("roomDescriptionForm");
-editRoom.addEventListener("click", function (event) {
-  roomForm.style.display = "inline";
-});
+if(editRoom){
+  editRoom.addEventListener("click", function (event) {
+    roomForm.style.display = "inline";
+  });
+}
+
 
 //JS to decide if we really want to delete a project or not
 
-const deleteProj = document.getElementById("deleteProjectBtn");
+const deleteProj = document.getElementById("deleteProjectBtn"); 
 const deleteProjYes = document.getElementById("doIt");
 const deleteProjNo = document.getElementById("dont");
 
 if (deleteProj) {
   deleteProj.addEventListener("click", function () {
     document.getElementById("deleteProject").setAttribute("class", "visible");
+    console.log("click on DeleteProjectBtn")
   });
 
   deleteProjYes.addEventListener("click", function () {

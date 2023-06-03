@@ -127,6 +127,7 @@ router.post("/:projectId/rooms", (req, res, next) => {
     roomName: req.body.roomName,
     projectId: req.params.projectId,
     userId: req.session.currentUser._id,
+    advancement:0,
   };
   console.log(roomInfo);
   Room.create(roomInfo)

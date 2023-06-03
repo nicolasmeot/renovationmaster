@@ -52,7 +52,9 @@
 
 
     <div class="roomCartProcessBar">
-    <div class="roomCartFinishedBar"style="width :{{roomFromDB.advancement}}%;">
+        {{#if advancement}}
+    <div class="roomCartFinishedBar" style="width :{{roomFromDB.advancement}}%;">
+        {{/if}}
     </div>
 
     <div class="roomCartUnfinishedBar" >
@@ -173,7 +175,7 @@
         {{/if}}
         {{#if taskDetails.plumbing}}
             <h3>Plumbing</h3>
-            {{#each taskDetails.painting}}
+            {{#each taskDetails.plumbing}}
                 {{>task}}
             {{/each}}
         {{/if}}

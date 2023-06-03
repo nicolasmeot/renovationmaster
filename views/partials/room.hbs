@@ -7,13 +7,13 @@
 
             <div class="roomCartPhotoSection">
                 <div class="roomCartPhoto">
-                    <img src={{roomInitialPictures.[0]}} alt="Initial picture"/>
+                    <img src="{{roomInitialPictures.[0]}}" alt="Initial picture"/>
                 </div>
 
                 <img class="photoArrow" src="/images/roomCartPhotoArrow.svg" alt="photoArrow">
 
                 <div class="roomCartPhoto">
-                    <img src={{threeDRendering.[0]}} alt=""/>
+                    <img src="{{threeDRendering.[0]}}" alt="ThreeD Picture"/>
 
                 </div>
                 
@@ -32,7 +32,9 @@
 
 
         <div class="roomCartProcessBar">
+        {{#if advancement}}
         <div class="roomCartFinishedBar" style="width :{{advancement}}%;">
+        {{/if}}
         </div>
 
         <div class="roomCartUnfinishedBar">

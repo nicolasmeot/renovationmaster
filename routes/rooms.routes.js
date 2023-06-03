@@ -12,16 +12,21 @@ let userProjects = {};
 router.get("/:projectId/rooms/:id", async (req, res, next) => {
   const roomId = req.params.id;
   let done = 0;
+  let advancement = 0;
   try {
     userProjects = await Project.find({ userId: req.session.currentUser._id });
     tasksFromDB = await Task.find({ roomId: roomId });
     //Code to determine the advancement of the project
-    tasksFromDB.forEach(function (el) {
-      if (el.Done) {
-        done += 1;
-      }
-    });
-    let advancement = (done / tasksFromDB.length) * 100;
+    console.log("tasksFromDB = ", tasksFromDB)
+    if(tasksFromDB.length>0){
+        tasksFromDB.forEach(function (el) {
+            if (el.Done) {
+              done += 1;
+            }
+        });
+        advancement = (done / tasksFromDB.length) * 100;
+    }
+
     console.log("advancement", advancement);
     roomFromDB = await Room.findByIdAndUpdate(
       roomId,
