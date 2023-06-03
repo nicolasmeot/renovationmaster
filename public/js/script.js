@@ -126,7 +126,7 @@ for (let i = 0; i < editItem.length; i++) {
 
 //JS to decide if we really want to delete a project or not
 
-const deleteProj = document.getElementById("editDeleteProject");
+const deleteProj = document.getElementById("deleteProjectBtn");
 const deleteProjYes = document.getElementById("doIt");
 const deleteProjNo = document.getElementById("dont");
 

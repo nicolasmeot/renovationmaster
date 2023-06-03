@@ -23,19 +23,21 @@
           {{#each userProjects}}
           <li class="menuClient"><a href="/projects/{{_id}}">{{firstName}} {{lastName}}.</a></li>
           <a href="#"><li class="menuRoom">Room 1</li></a>
-         {{/each}}
 
-         <div class="editDeleteBtn">
+          <div id="signoutBtn" class="editDeleteBtn">
             <img class="editIcon" src="/images/signout.svg" alt="">
             <a id="signout" class="editLink" href="#">Signout</a>
 
           </div>
+         {{/each}}
+         
+         
 
         </ul>
+
+        
         
       </div>
-
-
           
 
 

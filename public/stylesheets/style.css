@@ -1,4 +1,5 @@
 body {
+  font-family: "Lato";
   background-color: #fafafe;
   margin: 0;
 }
@@ -32,16 +33,37 @@ form {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 1024px), (orientation: landscape) {
+  #index {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+  }
+}
 
 #indexHeading {
   width: 100vw;
   height: 50vh;
   display: flex;
   flex-direction: column;
-  background-image: url("../images/mobileHomepageBackground.png");
-  background-size: cover;
+  background-image: url("/images/mobileHomepageBackground.png");
+
+  background-size: contain;
   padding: 0;
   background-color: white;
+}
+@media (min-width: 1024px), (orientation: landscape) {
+  #indexHeading {
+    width: 60vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url("../images/desktopHomepageBackground.png");
+    background-size: cover;
+    padding: 0;
+    background-color: white;
+  }
 }
 
 #indexHeadingContainer {
@@ -63,6 +85,16 @@ form {
 
   color: #17b35f;
 }
+@media (min-width: 1024px), (orientation: landscape) {
+  .largeLogo1 {
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4em;
+    padding: 0;
+    color: #17b35f;
+  }
+}
 
 .largeLogo2 {
   font-family: "DM Sans", sans-serif;
@@ -72,6 +104,17 @@ form {
   padding: 0;
 
   color: #7a24f7;
+}
+@media (min-width: 1024px), (orientation: landscape) {
+  .largeLogo2 {
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4em;
+    padding: 0;
+
+    color: #7a24f7;
+  }
 }
 
 #indexSlogan {
@@ -94,6 +137,16 @@ form {
   padding: 0;
   background-color: white;
 }
+@media (min-width: 1024px), (orientation: landscape) {
+  #indexLoginSignup {
+    width: 40vw;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    padding: 0;
+    background-color: white;
+  }
+}
 
 #indexLoginSignupContainer {
   height: 15vh;
@@ -102,6 +155,20 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+@media (min-width: 1024px), (orientation: landscape) {
+  #indexLoginSignupContainer {
+    height: 18vh;
+    margin: 5vh auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: absolute;
+    top: 41vh;
+    right: calc(20vw - 104px);
+  }
 }
 
 #indexLoginSignup p {
@@ -112,6 +179,21 @@ form {
   line-height: 0.8em;
 
   color: #5f5e63;
+}
+@media (min-width: 1024px), (orientation: landscape) {
+  #indexLoginSignup p {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.5em;
+    line-height: 1em;
+
+    color: #5f5e63;
+
+    position: absolute;
+    top: 30vh;
+    right: calc(20vw - 104px);
+  }
 }
 
 .roundWhiteBtn {
@@ -135,6 +217,11 @@ form {
   background-color: #ffffff;
   border: 1px solid #7a24f7;
   color: #7a24f7;
+}
+@media (min-width: 1024px), (orientation: landscape) {
+  #indexSignup {
+    margin: 2vh auto;
+  }
 }
 
 .roundGradientBtn {
@@ -180,6 +267,14 @@ form {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 1024px) {
+  .loginSignup {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+  }
+}
 
 .loginSignupHeading {
   width: 100vw;
@@ -189,6 +284,21 @@ form {
   justify-content: center;
   align-items: center;
 }
+@media (orientation: landscape) {
+  .loginSignupHeading {
+    height: 30vh;
+    margin-bottom: 2vh;
+  }
+}
+@media (min-width: 1024px) {
+  .loginSignupHeading {
+    width: 33vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
 .loginSignupHeadingContainer {
   width: 70vw;
@@ -197,6 +307,21 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+}
+@media (orientation: landscape) {
+  .loginSignupHeadingContainer {
+    height: 30vh;
+    margin-bottom: 2vh;
+  }
+}
+@media (min-width: 1024px) {
+  .loginSignupHeadingContainer {
+    position: relative;
+    width: 25vw;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+  }
 }
 
 .mediumLogo {
@@ -209,6 +334,18 @@ form {
 
   padding: 0;
   background-color: white;
+}
+@media (min-width: 1024px) {
+  .mediumLogo {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    display: flex;
+    padding: 0;
+    border-bottom: none;
+    background-color: transparent;
+  }
 }
 
 .mediumLogo1 {
@@ -237,6 +374,14 @@ form {
   flex-direction: column;
   padding: 0;
 }
+@media (min-width: 1024px) {
+  .slogan {
+    width: 20vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+  }
+}
 
 .slogan1 {
   font-family: "Lato";
@@ -246,6 +391,12 @@ form {
   display: flex;
 
   color: #2b2a30;
+}
+@media (min-width: 1024px) {
+  .slogan1 {
+    margin: auto;
+    width: 27vw;
+  }
 }
 
 .slogan2 {
@@ -257,6 +408,34 @@ form {
 
   color: #82818f;
 }
+@media (min-width: 1024px) {
+  .slogan2 {
+    margin: 2vh auto;
+  }
+}
+
+.loginSignupFormContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2vh;
+}
+@media (orientation: landscape) {
+  .loginSignupFormContainer {
+    margin-top: 2vh;
+  }
+}
+@media (min-width: 1024px) {
+  .loginSignupFormContainer {
+    width: 67vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 0;
+  }
+}
 
 .longForm {
   width: 100vw;
@@ -265,12 +444,18 @@ form {
   align-items: center;
   justify-content: center;
 }
+@media (min-width: 1024px) {
+  .longForm {
+    width: 59vw;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, auto);
 
-.loginSignupFormContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2vh;
+    padding: 20px;
+
+    justify-items: stretch;
+  }
 }
 
 .formLabel {
@@ -283,6 +468,17 @@ form {
 
   color: #2b2a30;
 }
+@media (min-width: 1024px) {
+  .formLabel {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    display: block;
+
+    color: #2b2a30;
+  }
+}
 
 .formInput {
   width: 70vw;
@@ -293,11 +489,27 @@ form {
   display: block;
   padding-top: 5px;
 }
+@media (min-width: 1024px) {
+  .formInput {
+    width: 25.5vw;
+    height: 46px;
+
+    background: #ffffff;
+    border: 1px solid #7a00fb;
+    border-radius: 2px;
+    display: block;
+  }
+}
 
 #signupBtn {
-  margin-top: 0.8vh;
+  margin-top: 2vh;
   margin-left: auto;
   margin-right: auto;
+}
+@media (min-width: 1024px) {
+  #signupBtn {
+    margin: 2vh auto 2vh 0;
+  }
 }
 
 /* 
@@ -320,6 +532,11 @@ form {
   margin-left: auto;
   margin-right: auto;
 }
+@media (min-width: 1024px) {
+  #loginBtn {
+    margin: 2vh auto 2vh 0;
+  }
+}
 
 /* 
 ███╗   ██╗ █████╗ ██╗   ██╗██████╗  █████╗ ██████╗ 
@@ -335,6 +552,14 @@ form {
   display: flex;
   justify-content: space-between;
 }
+@media (min-width: 1024px) {
+  .navbar {
+    width: 25vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 .navbarUp {
   width: 100vw;
@@ -345,13 +570,17 @@ form {
   padding: 10px;
   border-bottom: 1px solid #dcdbe0;
 }
-
-/* .navicon {
-  width: 47px;
-  height: 43px;
-
-  padding: calc((5vh-43px) / 2);
-} */
+@media (min-width: 1024px) {
+  .navbarUp {
+    width: 25vw;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: none;
+  }
+}
 
 #menuToggle {
   display: block;
@@ -367,6 +596,7 @@ form {
 
 #menuToggle a {
   text-decoration: none;
+  font-size: 1em;
   color: #2b2a30;
 
   transition: color 0.3s ease;
@@ -392,9 +622,6 @@ form {
   -webkit-touch-callout: none;
 }
 
-/*
-  * Just a quick hamburger
-  */
 #menuToggle span {
   display: block;
   width: 33px;
@@ -411,6 +638,11 @@ form {
 
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
     background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+@media (min-width: 1024px) {
+  #menuToggle span {
+    display: none;
+  }
 }
 
 #menuToggle span:first-child {
@@ -452,13 +684,29 @@ form {
 
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
+@media (orientation: landscape) {
+  #menu {
+    width: 25vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  #menu {
+    width: 25vw;
+    margin: 30vh 0 0 0;
+    padding: 0;
+    left: 4vw;
+    background: transparent;
+    transform: none;
+  }
+}
 
 .menuClient {
   padding: 3% 0;
   font-family: "Lato", sans-serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: calc(1vw + 1.5em);
+  font-weight: 300;
+  font-size: calc(1vw + 0.8em);
 }
 
 .menuRoom {
@@ -466,8 +714,8 @@ form {
   margin-left: 20%;
   font-family: "Lato", sans-serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: calc(1vw + 1em);
+  font-weight: 300;
+  font-size: calc(1vw + 0.8em);
 }
 
 #menuToggle input:checked ~ ul {
@@ -502,9 +750,43 @@ form {
 .navProfilePic {
   height: 36px;
 }
+@media (min-width: 1024px) {
+  .navProfilePic {
+    position: absolute;
+    top: 8vh;
+  }
+}
+@media (min-width: 1024px) {
+  .navProfilePic img {
+    height: 10vh;
+  }
+}
+
+#signoutBtn {
+  position: absolute;
+  bottom: 0;
+
+  margin: 3% auto 3% 3%;
+  color: #82818f;
+}
+@media (min-width: 1024px) {
+  #signoutBtn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 3% 3% 15vh 3%;
+    color: #82818f;
+    font-size: 1.5em;
+  }
+}
+
+#signoutBtn > a {
+  font-size: 1em;
+  color: #82818f;
+}
 
 #signout {
-  color: #2081e4;
+  color: #82818f;
 }
 
 .display {
@@ -513,6 +795,28 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media (min-width: 1024px) {
+  .display {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.displayMain {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .displayMain {
+    width: 75%;
+    height: 100vh;
+  }
 }
 
 /* 
@@ -725,6 +1029,11 @@ form {
 .projectsContainer {
   display: flex;
 }
+@media (min-width: 1024px) {
+  .projectsContainer {
+    width: 75vw;
+  }
+}
 
 .projectsContainer ul {
   width: 100%;
@@ -732,6 +1041,11 @@ form {
   grid-template-columns: 1fr 1fr;
   padding: 0;
   margin: auto;
+}
+@media (min-width: 700px), (orientation: landscape) {
+  .projectsContainer ul {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .projectsContainer li {
@@ -747,6 +1061,16 @@ form {
 #addProject {
   padding: 10px;
 }
+@media (min-width: 600px) {
+  #addProject {
+    width: 80px;
+  }
+}
+@media (min-width: 1024px) {
+  #addProject {
+    width: 100px;
+  }
+}
 
 .projectCard {
   position: relative;
@@ -756,6 +1080,16 @@ form {
   background: #ffffff;
   border-radius: 10px;
   filter: drop-shadow(0px 4px 4px #ebebf4);
+}
+@media (min-width: 600px), (orientation: landscape) {
+  .projectCard {
+    width: 25vw;
+  }
+}
+@media (min-width: 1024px), (orientation: landscape) {
+  .projectCard {
+    width: 20vw;
+  }
 }
 
 .projectCardHeading {
@@ -772,13 +1106,14 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: auto;
 }
 
 .projectCardclientName {
   font-family: "Lato";
   font-style: normal;
   font-weight: 500;
-  font-size: calc(1vw + 0.8em);
+  font-size: calc(1.5vw + 0.8em);
   padding: 5px;
 
   color: #2b2a30;
@@ -788,7 +1123,7 @@ form {
   font-family: "Lato";
   font-style: normal;
   font-weight: 300;
-  font-size: calc(1vw + 0.6em);
+  font-size: calc(1.5vw + 0.6em);
 
   color: #161518;
 }
@@ -1041,7 +1376,7 @@ form {
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 700;
-  font-size: calc(1vw + 0.8em);
+  font-size: calc(1vw + 0.9em);
   padding-top: 1.5vh;
 
   color: #2b2a30;
@@ -1389,7 +1724,7 @@ form {
 
 .roomPhotoContainer {
   width: 92vw;
-  height: 15vh;
+  height: 30vh;
   display: flex;
 
   justify-content: space-between;
@@ -1409,6 +1744,7 @@ form {
 
 .roomPhotoContainer ul {
   width: 94%;
+  height: 25vh;
   margin: auto;
   border: 0px solid;
   padding-left: 0;
@@ -1424,7 +1760,7 @@ form {
 .roomPhotoContainer li {
   position: relative;
   max-width: 50%;
-  height: 13vh;
+  height: 80%;
   margin: auto;
 
   border: 0px solid;
@@ -1448,7 +1784,7 @@ form {
 .addRoomPhoto {
   position: relative;
   max-width: 40vw;
-  height: 13vh;
+  height: 80%;
   display: flex;
   justify-content: center;
   align-items: center;

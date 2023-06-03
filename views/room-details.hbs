@@ -106,7 +106,8 @@
         <div class="roomPhotoContainer">
             <ul>
                 {{#each roomFromDB.currentPictures}}
-                <li class="roomPhoto"><img src={{this}} alt="Current pictures"/></li>
+                <li class="roomPhoto"><img src={{this}} alt="Current pictures"/>
+                <a class="deletePhoto" href="/projects/{{../roomFromDB.projectId}}/rooms/{{../roomFromDB._id}}/photos/del/roomInitialPictures/{{@index}}"><img src="/images/deleteGray.svg" alt=""></a></li>
                 {{/each}}
                 
                 <!--Formulaire d'upload des current pictures. Ne pas changer l'attribut class sinon modif à faire aussi dans le public/js/script.js-->
@@ -135,7 +136,8 @@
         <div class="roomPhotoContainer">
             <ul>
                 {{#each roomFromDB.threeDRendering}}
-                <li class="roomPhoto"><img src={{this}} alt="3d pictures"/></li>
+                <li class="roomPhoto"><img src={{this}} alt="ThreeDdpictures"/>
+                <a class="deletePhoto" href="/projects/{{../roomFromDB.projectId}}/rooms/{{../roomFromDB._id}}/photos/del/roomInitialPictures/{{@index}}"><img src="/images/deleteGray.svg" alt=""></a></li>
                 {{/each}}
                 
                 <!--Formulaire d'upload des 3D pictures. Ne pas changer l'attribut class sinon modif à faire aussi dans le public/js/script.js-->

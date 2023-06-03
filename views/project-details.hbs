@@ -1,8 +1,12 @@
+<div class="display">
 {{>nav}}
 
 {{!-- <h1>Project details page</h1> --}}
 
+
+<div class="displayMain">
 <div id="projectDetails">
+  <div class="projectDetailsHeading">
   <div id="clientInfo">
    <div id="clientName">{{projectDetails.firstName}} {{projectDetails.lastName}}</div>
    <div id="clientContact">
@@ -191,10 +195,10 @@
         </div>
     </label>
 </form>
-
+</div>
 
   
-
+<div class="projectDetailsRooms">
   <h2 class="sectionHead">Rooms</h2>
     {{#each roomDetails}}
     <a href="/projects/{{projectId}}/rooms/{{_id}}">{{>room}}</a>
@@ -213,9 +217,10 @@
     </form>
 
   </div>
+  </div>
   
 
 </div>
-
-
+</div>
+</div>
     
