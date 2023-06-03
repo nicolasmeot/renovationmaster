@@ -1235,6 +1235,10 @@ form {
   }
 }
 
+.attachForm {
+  display: none;
+}
+
 #clientInfo {
   width: 92%;
   height: 15vh;
@@ -1711,7 +1715,7 @@ form {
 }
 
 .taskTable {
-  border : black solid 1px;
+  border: black solid 1px;
 }
 
 /* 
@@ -1775,6 +1779,10 @@ form {
   align-items: center;
   justify-content: space-between;
   margin: 0 auto 5vh auto;
+}
+
+.hidden {
+  display: none;
 }
 
 #roomDescriptionFormBtn {

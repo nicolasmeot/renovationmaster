@@ -3,6 +3,7 @@ const router = require("express").Router();
 const Project = require("../models/Project.model.js");
 const Room = require("../models/Room.model.js");
 const Task = require("../models/Task.model.js");
+const dayjs = require("dayjs");
 
 const fileUploader = require("../config/cloudinary.config");
 
@@ -11,17 +12,42 @@ let userProjects = {};
 router.get("/:projectId/rooms/:id", async (req, res, next) => {
   const roomId = req.params.id;
   try {
-    userProjects= await Project.find({ userId: req.session.currentUser._id })
+    userProjects = await Project.find({ userId: req.session.currentUser._id });
     roomFromDB = await Room.findById(roomId);
     taskDetails = {
-        painting : await Task.find({ roomId: roomId, category : "Painting" }),
-        plumbing : await Task.find({ roomId: roomId, category : "Plumbing" }),
-        electricity : await Task.find({ roomId: roomId, category : "Electricity" }),
-        flooring : await Task.find({ roomId: roomId, category : "Flooring" }),
-        drywalling : await Task.find({ roomId: roomId, category : "Drywalling" }),
-    }
+      painting: await Task.find({ roomId: roomId, category: "Painting" }),
+      plumbing: await Task.find({ roomId: roomId, category: "Plumbing" }),
+      electricity: await Task.find({ roomId: roomId, category: "Electricity" }),
+      flooring: await Task.find({ roomId: roomId, category: "Flooring" }),
+      drywalling: await Task.find({ roomId: roomId, category: "Drywalling" }),
+    };
     console.log("taskDetails", taskDetails);
     res.render("room-details", { taskDetails, roomFromDB, userProjects });
+  } catch (error) {
+    console.log("an error happened", error);
+  }
+});
+
+router.post("/:projectId/rooms/:id", async (req, res, next) => {
+  const roomId = req.params.id;
+  try {
+    roomFromDB = await Room.findByIdAndUpdate(
+      roomId,
+      {
+        roomDescription: req.body.roomDescription,
+        finishDate: req.body.roomCartEFDate,
+      },
+      { new: true }
+    );
+    roomFromDB.finishDateFormatted = dayjs(roomFromDB.finishDate).format(
+      "YYYY-MM-DD"
+    );
+
+    console.log("roomFromDB", roomFromDB);
+    res.render("room-details", {
+      roomFromDB,
+      isHidden: roomFromDB.roomDescription && roomFromDB.finishDate,
+    });
   } catch (error) {
     console.log("an error happened", error);
   }
@@ -98,6 +124,16 @@ router.post(
     }
   }
 );
+
+//Route to delete Room
+router.get("/:projectId/rooms/:id/del", (req, res, next) => {
+  Room.findOneAndDelete(req.body.id).then(function () {
+    res.redirect(`/projects/${projectId}`);
+  });
+  // .catch((error) => {
+  //   console.log("an error happened", error);
+  // });
+});
 
 //Route to delete Room's img
 

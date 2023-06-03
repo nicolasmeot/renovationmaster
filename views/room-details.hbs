@@ -9,8 +9,10 @@
     </div>
         
     <h2 class="roomCartDescription">Description</h2>
-    <p class="roomCartDescriptionDetails">{{roomFromDB.roomDescription}}</p>
-    <form id="roomDescriptionForm" class="attachForm" action="" method="post"> 
+    <p id="roomCartDescriptionDetails">{{roomFromDB.roomDescription}}</p>
+    <span id="roomFinishDateText">Estimated finish date :</span>
+    <span id="roomFinishDate">{{roomFromDB.finishDate}}</span>
+    <form id="roomDescriptionForm" class="attachForm {{#if isHidden }}hidden{{/if}}" action="/projects/{{roomFromDB.projectId}}/rooms/{{roomFromDB._id}}" method="POST"> 
         <label id="roomDescriptionLabel" class="formLabel">
             <input id="roomDescriptionInput" class="attachFormInput" type="text" name="roomDescription"/>
         </label>
@@ -19,35 +21,34 @@
 
         <div class="roomCartEFDateContainer">
             <label class="roomCartEFDateLabel">Estimated finish date :</label>
-                <span class="roomCartEFDate">{{roomFromDB.finishDate}}</span>
+                <span class="roomCartEFDate">{{roomFromDB.finishDateFormatted}}</span>
                 <input id="roomCartEFDateInput" class="attachFormInput" type="date" name="roomCartEFDate"/>
             </label>
             <p class="attachInfo">
             </p>
         </div>
 
-
-        {{!-- <div id="roomDescriptionSaveEdit">
-            <div id="editRoomDescription">
-            <div id="editRoomDescriptionBtn" class="editDeleteBtn2">
-                <img class="editIcon" src="/images/edit.svg" alt="editIcon">
-                <a class="editDeleteLink" href="#">Edit / delete room</a>
-            </div> --}}
-
-            <div id="deleteRoomDescriptionBtn" class="hiddenDeleteBtn">
-                <img class="deleteIcon" src="/images/delete.svg" alt="deleteIcon">
-                <a class="deleteLink" href="#">Delete room</a>
-            </div>
-            
-
             <button id="roomDescriptionFormBtn" class="roundGradientSaveBtn" type="submit">Save</button>
             <p>{{#if errorMessage}}
                 {{errorMessage}}
             {{/if}}</p>
-
         
         
     </form>
+
+    <div id="roomDescriptionSaveEdit">
+        <div id="editRoomDescription">
+            <div id="editRoomDescriptionBtn" class="editDeleteBtn2">
+                <img class="editIcon" src="/images/edit.svg" alt="editIcon">
+                <a class="editDeleteLink" href="#">Edit / delete room</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="deleteRoomDescriptionBtn" class="hiddenDeleteBtn">
+        <img class="deleteIcon" src="/images/delete.svg" alt="deleteIcon">
+        <a class="deleteLink" href="/projects/{{../roomFromDB.projectId}}/rooms/{{../roomFromDB._id}}/del">Delete room</a>
+    </div>
 
 
     <div class="roomCartProcessBar">

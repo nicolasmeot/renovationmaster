@@ -8,7 +8,7 @@ const dayjs = require("dayjs");
 const fileUploader = require("../config/cloudinary.config");
 
 let userProjects = {};
-let userRooms = {}
+let userRooms = {};
 
 // Route to display the welcome page
 
@@ -17,9 +17,9 @@ router.get("/", (req, res, next) => {
   if (req.session.currentUser) {
     Project.find({ userId: req.session.currentUser._id })
       .then((projectsFromDB) => {
-        userProjects= projectsFromDB;
+        userProjects = projectsFromDB;
         console.log(projectsFromDB);
-        userProjects=projectsFromDB;
+        userProjects = projectsFromDB;
         res.render("projects", { projectsFromDB, userProjects });
       })
       .catch((error) => next(error));
@@ -60,13 +60,12 @@ router.post("/new", (req, res, next) => {
 });
 
 //Route to delete a project
-router.post("/:id/delete", (req,res,next) => {
-  const projectId=req.params.id
+router.post("/:id/delete", (req, res, next) => {
+  const projectId = req.params.id;
   Project.findByIdAndDelete(projectId)
-  .then(() => res.redirect("/projects"))
-  .catch(error => next(error) );
-})
-
+    .then(() => res.redirect("/projects"))
+    .catch((error) => next(error));
+});
 
 //Route to display the page with project details
 
@@ -83,7 +82,40 @@ router.get("/:id", async (req, res, next) => {
     projectDetails.firstMeetingDateFormatted = dayjs(
       projectDetails.firstMeetingDate
     ).format("YYYY-MM-DD");
-    res.render("project-details", { projectDetails, roomDetails, userProjects });
+    res.render("project-details", {
+      projectDetails,
+      roomDetails,
+      userProjects,
+    });
+  } catch (error) {
+    console.log("an error happened", error);
+  }
+});
+
+//Route to edit project info
+
+router.post("/:id", async (req, res, next) => {
+  const projectId = req.params.id;
+  try {
+    projectDetails = await Project.findByIdAndUpdate(
+      projectId,
+      {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        projectDeadline: req.body.projectDeadline,
+        address: req.body.address,
+        phoneNb: req.body.phoneNb,
+      },
+      { new: true }
+    );
+    projectDetails.projectDeadlineFormatted = dayjs(
+      projectDetails.projectDeadline
+    ).format("YYYY-MM-DD");
+
+    console.log("projectDetails", projectDetails);
+    res.render("project-details", {
+      projectDetails,
+    });
   } catch (error) {
     console.log("an error happened", error);
   }
@@ -95,7 +127,7 @@ router.post("/:projectId/rooms", (req, res, next) => {
   const roomInfo = {
     roomName: req.body.roomName,
     projectId: req.params.projectId,
-    userId: req.session.currentUser._id
+    userId: req.session.currentUser._id,
   };
   console.log(roomInfo);
   Room.create(roomInfo)
@@ -109,11 +141,18 @@ router.post("/:projectId/rooms", (req, res, next) => {
 
 //Route to upload the floor plan
 
-router.post("/:projectId/photos", fileUploader.single("floorPlan"), (req, res) => {
+router.post(
+  "/:projectId/photos",
+  fileUploader.single("floorPlan"),
+  (req, res) => {
     const projectId = req.params.projectId;
     const floorPlan = req.file.path;
     console.log("floorPlan :", floorPlan);
-    Project.findByIdAndUpdate( projectId, { floorPlan: floorPlan }, { new: true })
+    Project.findByIdAndUpdate(
+      projectId,
+      { floorPlan: floorPlan },
+      { new: true }
+    )
       .then(() => res.redirect(`/projects/${projectId}`))
       .catch((error) =>
         console.log(`Error while uploading the floorPlan: ${error}`)
