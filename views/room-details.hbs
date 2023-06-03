@@ -164,10 +164,42 @@
 
     <div class="section">
         <h2 class="sectionHead">Task details</h2>
-        {{#each taskDetails}}
-            <h3>{{procedure}}</h3>
-            <a href="/projects/{{projectId}}/rooms/{{roomId}}/tasks/{{_id}}/edit">Edit Task</a>
-        {{/each}}
+        {{#if taskDetails.painting}}
+            <h3>Painting</h3>
+            {{#each taskDetails.painting}}
+                {{>task}}
+            {{/each}}
+        {{/if}}
+        {{#if taskDetails.plumbing}}
+            <h3>Plumbing</h3>
+            {{#each taskDetails.painting}}
+                {{>task}}
+            {{/each}}
+        {{/if}}
+        {{#if taskDetails.electricity}}
+            <h3>Electricity</h3>
+            {{#each taskDetails.electricity}}
+                {{>task}}
+            {{/each}}
+        {{/if}}
+        {{#if taskDetails.flooring}}
+            <h3>Flooring</h3>
+            {{#each taskDetails.flooring}}
+                {{>task}}
+            {{/each}}
+        {{/if}}
+        {{#if taskDetails.drywalling}}
+            <h3>Drywalling</h3>
+            {{#each taskDetails.drywalling}}
+                {{>task}}
+            {{/each}}
+        {{/if}}
+        {{#if taskDetails.tiling}}
+            <h3>Tiling</h3>
+            {{#each taskDetails.tiling}}
+                {{>task}}
+            {{/each}}
+        {{/if}}
         <div id="taskContainer" class="sectionContainer">
             
             <form id="createTask" action="/projects/{{roomFromDB.projectId}}/rooms/{{roomFromDB._id}}/tasks" method="post"> 

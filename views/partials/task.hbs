@@ -1,17 +1,16 @@
 <table class="taskTable">
     <tr>
         <th>Procedure</th>
-        <th>Material</th>
+        <!--<th>Material</th> -->
         <th>Position</th>
         <th>Remarks</th>
         <th>Done?</th>
     </tr>
-
     <tr>
-        <td>{{procedure}}</td>
-        <td>{{materials}}</td>
-        <td>{{Position}}</td>
-        <td>{{Remarks}}</td>
-        <td>{{Done}}</td>
+        <td> <a href="/projects/{{projectId}}/rooms/{{roomId}}/tasks/{{_id}}/edit">{{procedure}}</a> </td>
+        <!--<td>{{materials}}</td> -->
+        <td>{{position}}</td>
+        <td>{{remarks}}</td>
+        <td>{{done}}</td>
     </tr>
 </table>

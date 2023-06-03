@@ -11,8 +11,8 @@ const taskSchema = new Schema({
     materials: [{
         material: String,
         materialCost: Number,
-        done: Boolean,
     }],
+    Done: Boolean,
     workers: [{
         workerName: String,
         workerHourlyPrice: Number,

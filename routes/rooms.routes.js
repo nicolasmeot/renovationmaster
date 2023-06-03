@@ -13,9 +13,15 @@ router.get("/:projectId/rooms/:id", async (req, res, next) => {
   try {
     userProjects= await Project.find({ userId: req.session.currentUser._id })
     roomFromDB = await Room.findById(roomId);
-    taskDetails = await Task.find({ roomId: roomId });
-    console.log("roomFromDB=", roomFromDB);
-    res.render("room-details", { taskDetails, roomFromDB });
+    taskDetails = {
+        painting : await Task.find({ roomId: roomId, category : "Painting" }),
+        plumbing : await Task.find({ roomId: roomId, category : "Plumbing" }),
+        electricity : await Task.find({ roomId: roomId, category : "Electricity" }),
+        flooring : await Task.find({ roomId: roomId, category : "Flooring" }),
+        drywalling : await Task.find({ roomId: roomId, category : "Drywalling" }),
+    }
+    console.log("taskDetails", taskDetails);
+    res.render("room-details", { taskDetails, roomFromDB, userProjects });
   } catch (error) {
     console.log("an error happened", error);
   }
