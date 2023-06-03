@@ -10,6 +10,7 @@ const roomSchema = new Schema({
     threeDRendering: [String],
     currentPictures: [String],  
     Tasks : [{type: Schema.Types.ObjectId, ref: "Task"}],
+    advancement : Number,
 });
 
 const Room = model("Room", roomSchema);

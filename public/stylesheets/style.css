@@ -1157,7 +1157,7 @@ form {
 }
 
 .projectCardFinishedBar {
-  width: 5%;
+  /*width: 5%;*/
   height: 100%;
 
   background: linear-gradient(270deg, #52cf71 0.38%, #cdf2d6 138.23%);
@@ -1714,8 +1714,20 @@ form {
   color: #7a24f7;
 }
 
-.taskTable {
+.taskTable th {
   border: black solid 1px;
+  margin: 0px 0px;
+  padding: 0px;
+}
+.taskTable td {
+  border: black solid 1px;
+  margin: 0px 0px;
+  padding: 0px;
+}
+
+.taskTable .checkbox {
+  border: grey solid 1px;
+  border-radius: 2px;
 }
 
 /* 

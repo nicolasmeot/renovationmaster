@@ -118,3 +118,18 @@ if (deleteProj) {
     document.getElementById("deleteProject").setAttribute("class", "hidden");
   });
 }
+
+//JS to check when a task is done
+
+const checkForm = document.querySelectorAll(".checkTask");
+const checkBox = document.querySelectorAll(".checkbox");
+console.log("checkBox: ",checkBox)
+console.log("checkForm: ",checkForm)
+let count = 0
+
+checkBox.forEach(function(el,i) {
+  el.addEventListener("change", function () {
+    checkForm[i].submit();
+    console.log("case checked!")
+  });
+})

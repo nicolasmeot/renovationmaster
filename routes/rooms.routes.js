@@ -11,9 +11,23 @@ let userProjects = {};
 
 router.get("/:projectId/rooms/:id", async (req, res, next) => {
   const roomId = req.params.id;
+  let done = 0;
   try {
     userProjects = await Project.find({ userId: req.session.currentUser._id });
-    roomFromDB = await Room.findById(roomId);
+    tasksFromDB = await Task.find({ roomId: roomId });
+    //Code to determine the advancement of the project
+    tasksFromDB.forEach(function (el) {
+      if (el.Done) {
+        done += 1;
+      }
+    });
+    let advancement = (done / tasksFromDB.length) * 100;
+    console.log("advancement", advancement);
+    roomFromDB = await Room.findByIdAndUpdate(
+      roomId,
+      { advancement: advancement },
+      { new: true }
+    );
     taskDetails = {
       painting: await Task.find({ roomId: roomId, category: "Painting" }),
       plumbing: await Task.find({ roomId: roomId, category: "Plumbing" }),
@@ -21,7 +35,7 @@ router.get("/:projectId/rooms/:id", async (req, res, next) => {
       flooring: await Task.find({ roomId: roomId, category: "Flooring" }),
       drywalling: await Task.find({ roomId: roomId, category: "Drywalling" }),
     };
-    console.log("taskDetails", taskDetails);
+    console.log("roomFromDB", roomFromDB);
     res.render("room-details", { taskDetails, roomFromDB, userProjects });
   } catch (error) {
     console.log("an error happened", error);
@@ -187,6 +201,20 @@ router.post("/:projectId/rooms/:roomId/tasks", (req, res, next) => {
     });
 });
 
+//Route to check when a task is done
+router.post("/:projectId/rooms/:roomId/tasks/:id/check", (req, res, next) => {
+  const taskId = req.params.id;
+  Task.findByIdAndUpdate(taskId, { Done: true }, { new: true })
+    .then((taskFromDB) => {
+      console.log(taskFromDB.procedure, "checked!");
+      res.redirect(
+        `/projects/${taskFromDB.projectId}/rooms/${taskFromDB.roomId}`
+      );
+    })
+    .catch((error) => next(error));
+});
+
+//Route to edit a Task
 router.get("/:projectId/rooms/:roomId/tasks/:id/edit", (req, res, next) => {
   const taskId = req.params.id;
   Task.findById(taskId)

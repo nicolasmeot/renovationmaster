@@ -18,8 +18,6 @@ router.get("/", (req, res, next) => {
     Project.find({ userId: req.session.currentUser._id })
       .then((projectsFromDB) => {
         userProjects = projectsFromDB;
-        console.log(projectsFromDB);
-        userProjects = projectsFromDB;
         res.render("projects", { projectsFromDB, userProjects });
       })
       .catch((error) => next(error));
@@ -75,6 +73,7 @@ router.get("/:id", async (req, res, next) => {
   try {
     projectDetails = await Project.findById(projectId);
     roomDetails = await Room.find({ projectId: projectId });
+    userProjects = await Project.find({ userId: req.session.currentUser._id });
     console.log(projectDetails);
     projectDetails.projectDeadlineFormatted = dayjs(
       projectDetails.projectDeadline
