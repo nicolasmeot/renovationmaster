@@ -151,6 +151,18 @@ router.post("/:projectId/rooms/:roomId/tasks", (req, res, next) => {
     });
 });
 
+//Route to check when a task is done
+router.post("/:projectId/rooms/:roomId/tasks/:id/check", (req,res,next) => {
+    const taskId = req.params.id;
+    Task.findByIdAndUpdate(taskId, {Done:true}, {new:true})
+    .then((taskFromDB) => {
+        console.log(taskFromDB.procedure, "checked!")
+        res.redirect(`/projects/${taskFromDB.projectId}/rooms/${taskFromDB.roomId}`)
+    })
+    .catch(error => next(error))
+})
+
+//Route to edit a Task
 router.get("/:projectId/rooms/:roomId/tasks/:id/edit", (req, res, next) => {
   const taskId = req.params.id;
   Task.findById(taskId)

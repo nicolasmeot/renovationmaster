@@ -1710,8 +1710,20 @@ form {
   color: #7a24f7;
 }
 
-.taskTable {
+.taskTable th {
   border : black solid 1px;
+  margin : 0px 0px;
+  padding : 0px;
+}
+.taskTable td {
+  border : black solid 1px;
+  margin : 0px 0px;
+  padding : 0px;
+}
+
+.taskTable .checkbox {
+  border : grey solid 1px;
+  border-radius: 2px;
 }
 
 /* 
