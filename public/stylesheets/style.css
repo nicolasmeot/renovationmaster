@@ -1718,6 +1718,15 @@ form {
 ██║  ██║╚██████╔╝╚██████╔╝██║ ╚═╝ ██║    ██████╔╝███████╗   ██║   ██║  ██║██║███████╗███████║
 ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝     ╚═╝    ╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚══════╝╚══════╝ */
 
+#roomDetails {
+  width: 100vw;
+}
+@media (min-width: 1024px) {
+  #roomDetails {
+    width: 75vw;
+  }
+}
+
 .roomHeading {
   display: flex;
   justify-content: space-between;
@@ -1844,6 +1853,11 @@ form {
   background: #fbfbfc;
   border: 1px dashed #c593fc;
   border-radius: 2px;
+}
+@media (min-width: 1024px), (orientation: landscape) {
+  .addRoomPhoto {
+    max-width: 20vw;
+  }
 }
 
 .addRoomPhoto form {
