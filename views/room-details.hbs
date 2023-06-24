@@ -10,7 +10,6 @@
         
     <h2 class="roomCartDescription">Description</h2>
     <p id="roomCartDescriptionDetails">{{roomFromDB.roomDescription}}</p>
-    <span id="roomFinishDateText">Estimated finish date :</span>
     <span id="roomFinishDate">{{roomFromDB.finishDate}}</span>
     <form id="roomDescriptionForm" class="attachForm {{#if isHidden }}hidden{{/if}}" action="/projects/{{roomFromDB.projectId}}/rooms/{{roomFromDB._id}}" method="POST"> 
         <label id="roomDescriptionLabel" class="formLabel">

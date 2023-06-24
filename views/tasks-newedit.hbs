@@ -1,11 +1,12 @@
-{{>nav}}
+
 
 
 
 <div class="display">
-  <h1 class="sectionHeadLarge">Task information</h1>
+  {{>nav}}
 
   <div >
+    <h1 class="sectionHeadLarge">Task information</h1>
     <div id="newProjectContainer">
       <form class="longForm" action="/projects/{{projectId}}/rooms/{{roomId}}/tasks/{{_id}}/edit" method="post">
         <label class="formLabel">Category*
