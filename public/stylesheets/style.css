@@ -670,7 +670,7 @@ form {
 
 #menu {
   position: absolute;
-  width: 70vw;
+  width: fit-content;
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
@@ -692,10 +692,13 @@ form {
 
 @media (min-width: 1024px) {
   #menu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     width: 25vw;
-    margin: 30vh 0 0 0;
+    margin: 30vh auto 0 auto;
     padding: 0;
-    left: 4vw;
+    
     background: transparent;
     transform: none;
   }
@@ -703,10 +706,11 @@ form {
 
 .menuClient {
   padding: 3% 0;
+  margin: 0 auto;
   font-family: "Lato", sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: calc(1vw + 0.8em);
+  font-size: calc(1vw + 0.7em);
 }
 
 .menuRoom {
@@ -725,6 +729,15 @@ form {
 .smallLogo {
   display: flex;
   padding: 0;
+}
+
+@media (min-width: 1024px) {
+  .smallLogo {
+    position: fixed;
+    margin: 5% 3% auto 3%;
+    display: flex;
+    padding: 0;
+  }
 }
 
 .smallLogo1 {
@@ -771,10 +784,10 @@ form {
 }
 @media (min-width: 1024px) {
   #signoutBtn {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
-    margin: 3% 3% 15vh 3%;
+    margin: auto 3% 3% 3%;
     color: #82818f;
     font-size: 1.5em;
   }
@@ -1101,7 +1114,7 @@ form {
 }
 
 .projectCardClientInfo {
-  width: 50%;
+  width: 70%;
   height: 45%;
   display: flex;
   flex-direction: column;
@@ -1153,7 +1166,7 @@ form {
   height: 10%;
 
   background: #f3f3f4;
-  border-radius: 0px 0px 10px 0px;
+  border-radius: 0px 0px 0px 0px;
 }
 
 .projectCardFinishedBar {
@@ -1310,15 +1323,32 @@ form {
   width: 85%;
 }
 
+#deleteProject h3 {
+  text-align: center;
+}
+
+#dont {
+  width: 50vw;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #deleteProject p {
   padding: 1vh 2.5vw;
   background-color: #7a24f7;
   color: white;
-  border: solid black;
+  border-radius: 10px;
 }
 
 #deleteProject.hidden {
   display: none;
+}
+
+#deleteProject form {
+  text-align: center;
+  width: 50vw;
+  margin: 0 auto;
 }
 
 #statusBarTitle {
@@ -1429,6 +1459,8 @@ form {
 .sectionContainer {
   width: 92%;
   display: flex;
+  flex-direction: column;
+  margin: 0 auto 5vh auto;
 
   justify-content: space-between;
   align-items: center;
@@ -1642,8 +1674,31 @@ form {
   color: #4e139f;
 }
 
-.roomCartDescriptionDetails {
-  margin: 0 4%;
+#roomCartDescriptionDetails {
+  width: 92vw;
+  margin: 2vh 4vw;
+  font-family: "lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(1vw + 0.6em);
+
+  color: #2b2a30;
+}
+
+#roomFinishDateText {
+  width: 92vw;
+  margin: 2vh 4vw;
+  font-family: "lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(1vw + 0.6em);
+
+  color: #2b2a30;
+}
+
+#roomFinishDate {
+  width: 92vw;
+  margin: 2vh 4vw;
   font-family: "lato";
   font-style: normal;
   font-weight: 400;
@@ -1714,19 +1769,27 @@ form {
   color: #7a24f7;
 }
 
+.taskTable {
+  border-collapse: collapse;
+  margin-bottom: 3vh;
+}
+
 .taskTable th {
-  border: black solid 1px;
+  border: #82808f solid 1px;
   margin: 0px 0px;
-  padding: 0px;
+  padding: 2vh 2vw;
 }
 .taskTable td {
-  border: black solid 1px;
+  border: #82808f solid 1px;
   margin: 0px 0px;
-  padding: 0px;
+  padding: 2vh 2vw;
+}
+
+.taskTable tr {
 }
 
 .taskTable .checkbox {
-  border: grey solid 1px;
+  border: #82808f solid 1px;
   border-radius: 2px;
 }
 
@@ -1790,11 +1853,15 @@ form {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 auto 5vh auto;
+  margin: 3vh auto 5vh auto;
 }
 
 .hidden {
   display: none;
+}
+
+#editRoomDescription {
+  margin-left: auto;
 }
 
 #roomDescriptionFormBtn {
