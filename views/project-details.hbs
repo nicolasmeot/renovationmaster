@@ -232,7 +232,7 @@
     <div class="projectDetailsRooms">
       <h2 class="sectionHead">Rooms</h2>
         {{#each roomDetails}}
-        <a href="/projects/{{projectId}}/rooms/{{_id}}">{{>room}}</a>
+        <a class="roomPreviewLink" href="/projects/{{projectId}}/rooms/{{_id}}">{{>room}}</a>
         {{/each}}
       
       <div id="roomCreation">

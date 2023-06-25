@@ -33,6 +33,9 @@ router.get("/:projectId/rooms/:id", async (req, res, next) => {
       { advancement: advancement },
       { new: true }
     );
+    roomFromDB.finishDateFormatted = dayjs(roomFromDB.finishDate).format(
+      "YYYY-MM-DD"
+    );
     taskDetails = {
       painting: await Task.find({ roomId: roomId, category: "Painting" }),
       plumbing: await Task.find({ roomId: roomId, category: "Plumbing" }),
